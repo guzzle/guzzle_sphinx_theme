@@ -124,4 +124,25 @@
     {%- endif %}
   {%- endblock %}
 
+  {% block key_events %}
+    {% if theme_bind_key_events %}
+      <script type="text/javascript">
+        $(document).keydown(function(e){
+          if (e.keyCode == 37) {
+            {% if prev %}
+            window.location = '{{ prev.link }}';
+            return false;
+            {% endif %}
+          } else if (e.keyCode == 39) {
+            {% if next %}
+            window.location = '{{ next.link }}';
+            return false;
+            {% endif %}
+          }
+        });
+      </script>
+    {% endif %}
+  {% endblock %}
+
 {%- endblock %}
+
