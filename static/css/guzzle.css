@@ -664,6 +664,11 @@ span.eqno {
 -------------------------------------------------- */
 
 @media screen and (max-device-width: 480px) {
+
+  .container {
+    max-width: 480px;
+  }
+
   body {
     margin: 0;
     padding-top: 0;
