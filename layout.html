@@ -3,7 +3,7 @@
 {# Do this so that bootstrap is included before the main css file #}
 {%- block htmltitle %}
   {{ super() }}
-  <link rel="stylesheet" type="text/css" href="{{ pathto('_static/css/bootstrap.min.css', 1) }}" />
+  <link rel="stylesheet" type="text/css" href="{{ pathto('_static/bootstrap.min.css', 1) }}" />
 {%- endblock %}
 
 {# Displays the next and previous links both before and after content #}
@@ -32,7 +32,7 @@
 {%- endmacro %}
 
 {%- block extrahead %}
-  <link rel="stylesheet" type="text/css" href="{{ pathto('_static/css/bootstrap-responsive.min.css', 1) }}" />
+  <link rel="stylesheet" type="text/css" href="{{ pathto('_static/bootstrap-responsive.min.css', 1) }}" />
   {% if theme_touch_icon %}
   <link rel="apple-touch-icon" href="{{ pathto('_static/' ~ theme_touch_icon, 1) }}" />
   {% endif %}
