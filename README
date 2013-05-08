@@ -37,10 +37,6 @@ Add the following to your conf.py:
         "google_analytics_account": "my_ga_account",
         # Set a custom class to add to the navbar (e.g. navbar-inverse)
         "navbar_class": "",
-        # Set the path to a logo to show above the table of contents
-        "index_logo": "",
-        # Set the height of the logo
-        "index_logo_height": "0px",
         # Path to a touch icon
         "touch_icon": ""
     }
