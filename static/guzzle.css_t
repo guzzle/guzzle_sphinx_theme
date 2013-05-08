@@ -102,6 +102,31 @@ div.highlight {
   font-weight: bold;
 }
 
+[class^="icon-"],
+[class*=" icon-"] {
+  background-image: url("../_static/glyphicons-halflings.png");
+}
+
+.icon-white,
+.nav-pills > .active > a > [class^="icon-"],
+.nav-pills > .active > a > [class*=" icon-"],
+.nav-list > .active > a > [class^="icon-"],
+.nav-list > .active > a > [class*=" icon-"],
+.navbar-inverse .nav > .active > a > [class^="icon-"],
+.navbar-inverse .nav > .active > a > [class*=" icon-"],
+.dropdown-menu > li > a:hover > [class^="icon-"],
+.dropdown-menu > li > a:focus > [class^="icon-"],
+.dropdown-menu > li > a:hover > [class*=" icon-"],
+.dropdown-menu > li > a:focus > [class*=" icon-"],
+.dropdown-menu > .active > a > [class^="icon-"],
+.dropdown-menu > .active > a > [class*=" icon-"],
+.dropdown-submenu:hover > a > [class^="icon-"],
+.dropdown-submenu:focus > a > [class^="icon-"],
+.dropdown-submenu:hover > a > [class*=" icon-"],
+.dropdown-submenu:focus > a > [class*=" icon-"] {
+  background-image: url("../_static/glyphicons-halflings-white.png");
+}
+
 /* Sphinx sidebar
 -------------------------------------------------- */
 
@@ -191,16 +216,21 @@ div.sphinxsidebar input {
 /* Two-pane table list
 -------------------------------------------------- */
 
+table.two-column.table-bordered caption+thead tr:first-child th:first-child,
+table.two-column.table-bordered caption+tbody tr:first-child td:first-child,
+table.two-column.table-bordered colgroup+thead tr:first-child th:first-child,
+table.two-column.table-bordered colgroup+tbody tr:first-child td:first-child,
+table.two-column tbody td {
+  border: 0 0 1px 0 solid #eee;
+  border-left: none;
+  padding: 8px 4px;
+  font-size: 16px;
+}
+
 table.two-column {
   width: 100%;
   border: 0px none;
   box-shadow: none;
-}
-
-table.two-column tbody td {
-  border: 0 0 1px 0 solid #eee;
-  padding: 8px 4px;
-  font-size: 15px;
 }
 
 /* GitHub stars in the menu
