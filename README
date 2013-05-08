@@ -7,7 +7,7 @@ Sphinx theme used by Guzzle: http://guzzlephp.org
 Installation
 ============
 
-Clone into your _themes folder or checkout as a Git submodule.
+Clone or symlink into your _themes/ folder or checkout as a Git submodule.
 
 Configuration
 =============
@@ -16,11 +16,11 @@ Add the following to your conf.py:
 
     sys.path.append(os.path.abspath('_themes'))
     # Uses a Guzzle style Pygments theme
-    pygments_style = 'guzzle_theme.GuzzleStyle'
+    pygments_style = 'guzzle_sphinx_theme.GuzzleStyle'
     # Adds an HTML table visitor to apply Bootstrap table classes
-    html_translator_class = 'guzzle_theme.HTMLTranslator'
+    html_translator_class = 'guzzle_sphinx_theme.HTMLTranslator'
     html_theme_path = ['_themes']
-    html_theme = 'guzzle_theme'
+    html_theme = 'guzzle_sphinx_theme'
 
     # Guzzle theme options (see theme.conf for more information)
     html_theme_options = {
@@ -65,15 +65,10 @@ Finally, edit your override file "source/_templates/layout.html":
 
     {# Import the theme's layout. #}
     {% extends "!layout.html" %}
-    
+
     {# Customize the links in the main nav menu #}
     {%- block nav_links %}
     <li><a href="{{ pathto(master_doc) }}">Home</a></li>
     <li><a href="{{ pathto('docs') }}">Docs</a></li>
-    <li><a href="http://guzzlephp.org/api/index.html">API</a></li>
-    <li><a href="https://github.com/guzzle/guzzle">GitHub</a></li>
-    <li><a href="https://groups.google.com/forum/?hl=en#!forum/guzzle">Forum</a></li>
-    <li><a href="https://packagist.org/packages/guzzle/guzzle">Packagist</a></li>
-    <li><a href="irc:irc.freenode.com/#guzzlephp">IRC</a></li>
+    <!-- etc... -->
     {%- endblock %}
-
