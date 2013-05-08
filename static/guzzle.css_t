@@ -127,6 +127,10 @@ div.highlight {
   background-image: url("../_static/glyphicons-halflings-white.png");
 }
 
+a.internal em {
+  font-style: normal;
+}
+
 /* Sphinx sidebar
 -------------------------------------------------- */
 
@@ -263,6 +267,10 @@ table.two-column {
 
 .top-links .breadcrumb, .footer-links .breadcrumb {
   background-color: #fff;
+}
+
+.top-links a, .footer-links a {
+  opacity: 0.7;
 }
 
 .footer-links {

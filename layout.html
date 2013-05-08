@@ -14,14 +14,14 @@
       <ul class="breadcrumb pull-right">
         {%- if prev and prev.title != '&lt;no title&gt;' %}
         <li>
-          <a href="{{ prev.link|e }}" title="{{ _('previous chapter')}}">Prev: {{ prev.title }}</a>
+          <a href="{{ prev.link|e }}" title="{{ _('previous chapter')}}">&larr; {{ prev.title }}</a>
           {%- if next and next.title != '&lt;no title&gt;' %}
           <span class="divider">/</span>
           {% endif %}
         </li>
         {%- endif %}
         {%- if next and next.title != '&lt;no title&gt;' %}
-          <li><a href="{{ next.link|e }}" title="{{ _('next chapter')}}">Next: {{ next.title }}</a></li>
+          <li><a href="{{ next.link|e }}" title="{{ _('next chapter')}}">{{ next.title }} &rarr;</a></li>
         {%- endif %}
       </ul>
     </div>
