@@ -7,19 +7,26 @@ Sphinx theme used by Guzzle: http://guzzlephp.org
 Installation
 ============
 
-Clone or symlink into your _themes/ folder or checkout as a Git submodule.
+Install via pip:
+
+    $ pip install guzzle_sphinx_theme
+
+or if you have the code checked out locally:
+
+    $ python setup.py install
+
 
 Configuration
 =============
 
 Add the following to your conf.py:
 
-    sys.path.append(os.path.abspath('_themes'))
+    import guzzle_sphinx_theme
     # Uses a Guzzle style Pygments theme
     pygments_style = 'guzzle_sphinx_theme.GuzzleStyle'
     # Adds an HTML table visitor to apply Bootstrap table classes
     html_translator_class = 'guzzle_sphinx_theme.HTMLTranslator'
-    html_theme_path = ['_themes']
+    html_theme_path = guzzle_sphinx_theme.html_theme_path()
     html_theme = 'guzzle_sphinx_theme'
 
     # Guzzle theme options (see theme.conf for more information)
