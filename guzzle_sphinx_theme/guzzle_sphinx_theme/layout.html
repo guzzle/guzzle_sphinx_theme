@@ -14,14 +14,14 @@
       <ul class="breadcrumb pull-right">
         {%- if prev and prev.title != '&lt;no title&gt;' %}
         <li>
-          <a href="{{ prev.link|e }}" title="{{ _('previous chapter')}}">&larr; {{ prev.title }}</a>
+          <a href="{{ prev.link|e }}" title="{{ _('previous chapter')}} (use the left arrow)">&larr; {{ prev.title }}</a>
           {%- if next and next.title != '&lt;no title&gt;' %}
           <span class="divider">/</span>
           {% endif %}
         </li>
         {%- endif %}
         {%- if next and next.title != '&lt;no title&gt;' %}
-          <li><a href="{{ next.link|e }}" title="{{ _('next chapter')}}">{{ next.title }} &rarr;</a></li>
+          <li><a href="{{ next.link|e }}" title="{{ _('next chapter')}} (use the right arrow)">{{ next.title }} &rarr;</a></li>
         {%- endif %}
       </ul>
     </div>
@@ -33,6 +33,7 @@
 {%- endmacro %}
 
 {%- block extrahead %}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="{{ pathto('_static/bootstrap-responsive.min.css', 1) }}" />
   {% if theme_touch_icon %}
   <link rel="apple-touch-icon" href="{{ pathto('_static/' ~ theme_touch_icon, 1) }}" />

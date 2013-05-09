@@ -269,7 +269,7 @@ table.two-column {
   background-color: #fff;
 }
 
-.top-links a, .footer-links a {
+.top-links a {
   opacity: 0.7;
 }
 
@@ -713,10 +713,7 @@ span.eqno {
     float: none;
     min-height: 0;
     padding: 10px;
-  }
-
-  .left-bar-other {
-    display: none;
+    margin-top: 20px;
   }
 
   .navbar-fixed-top {
@@ -731,10 +728,6 @@ span.eqno {
   }
 
   div.sphinxsidebar p.logo {
-    display: none;
-  }
-
-  div.footer {
     display: none;
   }
 
