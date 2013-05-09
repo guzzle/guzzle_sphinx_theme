@@ -15,11 +15,12 @@ or if you have the code checked out locally:
 
     $ python setup.py install
 
-
 Configuration
 =============
 
 Add the following to your conf.py:
+
+.. code-block:: python
 
     import guzzle_sphinx_theme
     # Uses a Guzzle style Pygments theme
@@ -67,10 +68,14 @@ overridden or extended.
 
 Place a "layout.html" file in your project's "/_templates" directory.
 
-    $ mkdir source/_templates
-    $ touch source/_templates/layout.html
+.. code-block:: bash
+
+    mkdir source/_templates
+    touch source/_templates/layout.html
 
 Then, configure your "conf.py":
+
+.. code-block:: python
 
     templates_path = ['_templates']
 

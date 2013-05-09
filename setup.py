@@ -1,11 +1,10 @@
 from setuptools import setup
 
-
 setup(
     name='guzzle_sphinx_theme',
     version='0.1',
     description='Sphinx theme used by Guzzle.',
-    long_description=open('README').read(),
+    long_description=open('README.rst').read(),
     author='Michael Dowling',
     author_email='mtdowling@gmail.com',
     url='https://github.com/guzzle/guzzle_sphinx_theme',
