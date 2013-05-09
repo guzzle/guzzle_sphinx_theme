@@ -3,23 +3,6 @@
 import os
 import inspect
 
-# There is a bug in docutils when trying to use a theme that's installed as
-# a python package.  This is a "workaround" so we don't get error messages
-# about not being able to find html4css1.css.  We're basically converting
-# the default_stylesheet_path to always be an absolute path.  For whatever
-# reason docutils will sometimes use a relative path, which will break if
-# we ever chdir.
-from docutils.writers.html4css1 import Writer as _Writer
-_Writer.default_stylesheet_path = os.path.join(
-    os.path.dirname(os.path.abspath(inspect.getfile(_Writer))),
-    'html4css1.css')
-try:
-    _Writer.settings_spec[2][2][2]['default'] = [_Writer.default_stylesheet_path]
-except (IndexError, KeyError):
-    sys.stderr.write("Unable to fix default_stylesheet_path, you "
-                     "may see errors about not finding stylesheets.\n")
-
-
 from docutils import nodes
 from sphinx.locale import admonitionlabels
 from sphinx.writers.html import HTMLTranslator as SphinxHTMLTranslator
