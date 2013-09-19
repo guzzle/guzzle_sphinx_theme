@@ -149,7 +149,7 @@ div.sphinxsidebar {
   float: left;
   width: 200px;
   padding: 0;
-  word-wrap: unrestricted;
+  word-wrap: break-word;
 }
 
 div.sphinxsidebarwrapper p.logo {
