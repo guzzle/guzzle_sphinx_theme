@@ -23,12 +23,17 @@ Add the following to your conf.py:
 .. code-block:: python
 
     import guzzle_sphinx_theme
+
     # Uses a Guzzle style Pygments theme
     pygments_style = 'guzzle_sphinx_theme.GuzzleStyle'
+
     # Adds an HTML table visitor to apply Bootstrap table classes
     html_translator_class = 'guzzle_sphinx_theme.HTMLTranslator'
     html_theme_path = guzzle_sphinx_theme.html_theme_path()
     html_theme = 'guzzle_sphinx_theme'
+
+    # Register the theme as an extension to generate a sitemap.xml
+    extensions.append("guzzle_sphinx_theme")
 
     # Guzzle theme options (see theme.conf for more information)
     html_theme_options = {
@@ -56,7 +61,11 @@ Add the following to your conf.py:
         "touch_icon": "",
 
         # Set to true to bind left and right key events to turn the page
-        "bind_key_events": 1
+        "bind_key_events": 1,
+
+        # Specify a base_url used to generate sitemap.xml links. If not
+        # specified, then no sitemap will be built.
+        "base_url": ""
     }
 
 Customizing the layout
