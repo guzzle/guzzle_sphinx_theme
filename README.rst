@@ -60,9 +60,6 @@ Add the following to your conf.py:
         # Path to a touch icon
         "touch_icon": "",
 
-        # Set to true to bind left and right key events to turn the page
-        "bind_key_events": 1,
-
         # Specify a base_url used to generate sitemap.xml links. If not
         # specified, then no sitemap will be built.
         "base_url": ""
@@ -99,3 +96,9 @@ Finally, edit your override file "source/_templates/layout.html":
     <li><a href="{{ pathto('docs') }}">Docs</a></li>
     <!-- etc... -->
     {%- endblock %}
+
+If you are using Readthedocs, then you might run into an issue where they don't
+currently allow you to extend layout.html. If you only need to add links to the
+menu, then you can just create a nav_links.html file in your _templates
+directory that includes li nodes. The contents of this file will be included
+when building the docs.
