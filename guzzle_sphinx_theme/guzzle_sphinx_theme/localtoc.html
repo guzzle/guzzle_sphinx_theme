@@ -1,0 +1,10 @@
+{%- if display_toc %}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3><a href="{{ pathto(master_doc) }}">{{ _('Table Of Contents') }}</a></h3>
+  </div>
+  <div class="panel-body panel-toc">
+    {{ toc }}
+  </div>
+</div>
+{%- endif %}

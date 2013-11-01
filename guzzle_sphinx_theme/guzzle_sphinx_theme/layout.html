@@ -4,7 +4,9 @@
 {%- block htmltitle %}
   {{ super() }}
   <link rel="stylesheet" type="text/css" href="{{ pathto('_static/bootstrap.min.css', 1) }}" />
-  <script type="text/javascript" src="{{ pathto('_static/jquery-1.9.1.min.js')}}"></script>
+  <link rel="stylesheet" type="text/css" href="{{ pathto('_static/bootstrap-theme.min.css', 1) }}" />
+  <script type="text/javascript" src="{{ pathto('_static/jquery-1.9.1.min.js', 1)}}"></script>
+  <script type="text/javascript" src="{{ pathto('_static/bootstrap.min.js', 1)}}"></script>
 {%- endblock %}
 
 {# Displays the next and previous links both before and after content #}
@@ -16,7 +18,7 @@
         <li>
           <a href="{{ prev.link|e }}" title="{{ _('previous chapter')}} (use the left arrow)">&larr; {{ prev.title }}</a>
           {%- if next and next.title != '&lt;no title&gt;' %}
-          <span class="divider">/</span>
+          <span class="divider"></span>
           {% endif %}
         </li>
         {%- endif %}
@@ -32,6 +34,28 @@
   {% endif %}
 {%- endmacro %}
 
+{%- macro guzzle_sidebar() %}
+  {%- if render_sidebar %}
+  <div class="col-md-3 sphinxsidebar">
+    <div class="sphinxsidebarwrapper">
+      {%- block sidebarlogo %}
+      {%- if logo %}
+        <p class="logo"><a href="{{ pathto(master_doc) }}">
+          <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
+        </a></p>
+      {%- endif %}
+      {%- endblock %}
+      {%- if sidebars != None %}
+        {#- new style sidebar: explicitly include/exclude templates #}
+        {%- for sidebartemplate in sidebars %}
+        {%- include sidebartemplate %}
+        {%- endfor %}
+      {%- endif %}
+    </div>
+  </div>
+  {%- endif %}
+{%- endmacro %}
+
 {%- block extrahead %}
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="{{ pathto('_static/bootstrap-responsive.min.css', 1) }}" />
@@ -42,26 +66,34 @@
 {% endblock %}
 
 {% block header %}
-  <div class="navbar navbar-fixed-top {{ theme_navbar_class }}">
-    <div class="navbar-inner">
-      <div class="container">
-        <a class="brand" href="{{ pathto(master_doc) }}">{{ theme_project_nav_name }}</a>
-        <ul class="nav">
-          {%- block nav_links %}
-            <li><a href="{{ pathto(master_doc) }}">Home</a></li>
-          {%- endblock %}
-          {% include "nav_links.html" ignore missing %}
-        </ul>
-        {%- if theme_github_user and theme_github_repo %}
-        <div class="pull-right" id="github-stars">
-          <iframe src="http://ghbtns.com/github-btn.html?user={{ theme_github_user }}&repo={{ theme_github_repo }}&type=watch&count=true&size=small"
-                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
-        </div>
-        {%- endif %}
-      </div>
+<nav class="navbar navbar-default navbar-fixed-top {{ theme_navbar_class }}" role="navigation">
+  <div class="container">
+    {%- if theme_github_user and theme_github_repo %}
+    <div class="visible-md visible-lg navbar-text pull-right" id="github-stars">
+      <iframe src="http://ghbtns.com/github-btn.html?user={{ theme_github_user }}&repo={{ theme_github_repo }}&type=watch&count=true&size=small"
+      allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+    </div>
+    {%- endif %}
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#toggle-main-nav">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{ pathto(master_doc) }}">{{ theme_project_nav_name }}</a>
+    </div>
+    <div class="collapse navbar-collapse" id="toggle-main-nav">
+      <ul class="nav navbar-nav">
+        {%- block nav_links %}
+        <li><a href="{{ pathto(master_doc) }}">Home</a></li>
+        {%- endblock %}
+        {% include "nav_links.html" ignore missing %}
+      </ul>
     </div>
   </div>
-  {{ super() }}
+</nav>
+{{ super() }}
 {% endblock %}
 
 {%- block content %}
@@ -76,10 +108,10 @@
       {%- endblock %}
 
       {%- block document_wrapper %}
-        <div class="document clearer">
-          {%- block sidebar1 %}{{ sidebar() }}{% endblock %}
+        <div class="row document clearer">
+          {%- block sidebar1 %}{{ guzzle_sidebar() }}{% endblock %}
           {%- block document %}
-            <div class="body">
+            <div class="col-md-9 body">
               {% block body %} {% endblock %}
             </div>
           {%- endblock %}

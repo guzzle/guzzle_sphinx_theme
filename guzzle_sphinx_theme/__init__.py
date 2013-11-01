@@ -76,7 +76,7 @@ class HTMLTranslator(SphinxHTMLTranslator):
 
 
 class GuzzleStyle(Style):
-    background_color = "#f8f8f8"
+    background_color = "#f7f7f7"
     default_style = ""
 
     styles = {
