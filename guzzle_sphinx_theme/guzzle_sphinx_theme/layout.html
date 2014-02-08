@@ -2,12 +2,20 @@
 
 {# Do this so that bootstrap is included before the main css file #}
 {%- block htmltitle %}
+  <link rel="stylesheet" type="text/css" href="{{ pathto('_static/css/bootstrap.min.css', 1) }}" />
+  <link rel="stylesheet" type="text/css" href="{{ pathto('_static/css/bootstrap-theme.min.css', 1) }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="{{ pathto('_static/js/jquery-1.9.1.min.js', 1)}}"></script>
+  <script type="text/javascript" src="{{ pathto('_static/js/bootstrap.min.js', 1)}}"></script>
   {{ super() }}
-  <link rel="stylesheet" type="text/css" href="{{ pathto('_static/bootstrap.min.css', 1) }}" />
-  <link rel="stylesheet" type="text/css" href="{{ pathto('_static/bootstrap-theme.min.css', 1) }}" />
-  <script type="text/javascript" src="{{ pathto('_static/jquery-1.9.1.min.js', 1)}}"></script>
-  <script type="text/javascript" src="{{ pathto('_static/bootstrap.min.js', 1)}}"></script>
 {%- endblock %}
+
+{%- block extrahead %}
+  {% if theme_touch_icon %}
+  <link rel="apple-touch-icon" href="{{ pathto('_static/' ~ theme_touch_icon, 1) }}" />
+  {% endif %}
+  {{ super() }}
+{% endblock %}
 
 {# Displays the next and previous links both before and after content #}
 {% macro render_relations(class='footer-links', add_spacer=0) -%}
@@ -29,7 +37,7 @@
     </div>
   {% else %}
     {% if add_spacer %}
-      <div class="rel-spacer clearer"></div>
+      <div class="clearer"></div>
     {% endif %}
   {% endif %}
 {%- endmacro %}
@@ -55,15 +63,6 @@
   </div>
   {%- endif %}
 {%- endmacro %}
-
-{%- block extrahead %}
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="{{ pathto('_static/bootstrap-responsive.min.css', 1) }}" />
-  {% if theme_touch_icon %}
-  <link rel="apple-touch-icon" href="{{ pathto('_static/' ~ theme_touch_icon, 1) }}" />
-  {% endif %}
-  {{ super() }}
-{% endblock %}
 
 {% block header %}
 <nav class="navbar navbar-default navbar-fixed-top {{ theme_navbar_class }}" role="navigation">
@@ -101,37 +100,39 @@
   {%- if pagename == 'index' and theme_index_template %}
     {% include theme_index_template %}
   {%- else %}
-    <div class="container">
+    <div class="container-wrapper">
+        <div class="container-fluid">
 
-      {%- block top_rel_links %}
-        {{ render_relations('top-links', 1) }}
-      {%- endblock %}
+          {%- block top_rel_links %}
+            {{ render_relations('top-links', 1) }}
+          {%- endblock %}
 
-      {%- block document_wrapper %}
-        <div class="row document clearer">
-          {%- block sidebar1 %}{{ guzzle_sidebar() }}{% endblock %}
-          {%- block document %}
-            <div class="col-md-9 body">
-              {% block body %} {% endblock %}
+          {%- block document_wrapper %}
+            <div class="row document clearer">
+              {%- block sidebar1 %}{{ guzzle_sidebar() }}{% endblock %}
+              {%- block document %}
+                <div class="col-md-9 body">
+                  {% block body %} {% endblock %}
+                </div>
+              {%- endblock %}
+              {%- block sidebar2 %}{# Place holder for other sidebar #}{% endblock %}
+              <div class="clearfix"></div>
             </div>
           {%- endblock %}
-          {%- block sidebar2 %}{# Place holder for other sidebar #}{% endblock %}
-          <div class="clearfix"></div>
+
+          {%- block bottom_rel_links %}
+            {{ render_relations('footer-links') }}
+          {%- endblock %}
+
+          {%- block comments -%}
+            {% if theme_disqus_comments_shortname %}
+            <div class="container comment-container">
+              {% include "comments.html" %}
+            </div>
+            {% endif %}
+          {%- endblock %}
+
         </div>
-      {%- endblock %}
-
-      {%- block bottom_rel_links %}
-        {{ render_relations('footer-links') }}
-      {%- endblock %}
-
-      {%- block comments -%}
-        {% if theme_disqus_comments_shortname %}
-        <div class="container comment-container">
-          {% include "comments.html" %}
-        </div>
-        {% endif %}
-      {%- endblock %}
-
     </div>
   {%- endif %}
 {%- endblock %}

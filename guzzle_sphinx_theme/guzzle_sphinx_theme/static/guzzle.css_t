@@ -8,12 +8,16 @@ body {
 }
 
 .navbar {
-    margin-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: 2px solid #428bca;
+  font-size: 16px;
 }
 
 div.clearer {
   clear: both;
 }
+
+.container-wrapper { padding: 0 15px; }
 
 div.document {
   margin: 0 auto;
@@ -78,7 +82,6 @@ div.body p, div.body dd, div.body li {
 tt {
   font-family: Consolas, Monaco, Menlo, "Courier New", monospace;
   font-size: 14px;
-  color: #333;
 }
 
 code, pre {
@@ -100,10 +103,8 @@ div.highlight {
 }
 
 .navbar>.container .navbar-brand {
-    margin: 0 10px 0 0;
-}
-
-.navbar-brand {
+  margin: 0 10px 0 0;
+  color: #428bca;
   font-weight: bold;
 }
 
@@ -410,6 +411,21 @@ div.body p.caption {
   text-align: inherit;
 }
 
+table.field-list {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+table.field-list td,
+table.field-list th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  vertical-align: top;
+  line-height: 1.4;
+}
+
 .field-list ul {
   padding-left: 1em;
 }
@@ -470,31 +486,46 @@ p.topic-title {
 
 /* -- admonitions ----------------------------------------------------------- */
 
-div.admonition {
-  background: #fafafa;
+.admonition {
   margin: 20px 0;
-  padding: 10px 30px;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  padding: 20px;
+  border-left: 3px solid #eee;
+  background-color: #fafafa;
 }
 
-div.admonition dt {
+.admonition dt {
   font-weight: bold;
 }
 
-div.admonition dl {
+.admonition dl {
   margin-bottom: 0;
 }
 
-p.admonition-title {
-  margin: 0px 10px 5px 0px;
-  font-weight: bold;
+.admonition-title {
+  margin: 0px 0 5px 0px;
+  font-weight: normal;
   display: inline;
+  font-size: 22px;
 }
 
-p.admonition-title:after {
-  content: ":";
-}
+.admonition.danger,
+.admonition.error { background-color: #fdf7f7; border-color: #d9534f; }
+.admonition.danger .admonition-title,
+.admonition.error .admonition-title { color: #d9534f; }
+
+.admonition.warning,
+.admonition.attention,
+.admonition.caution { background-color: #fcf8f2; border-color: #f0ad4e; }
+.admonition.warning .admonition-title,
+.admonition.attention .admonition-title,
+.admonition.caution .admonition-title { color: #f0ad4e; }
+
+.admonition.note,
+.admonition.hint,
+.admonition.tip { background-color: #fdf7f7; border-color: #d9534f; }
+.admonition.note .admonition-title,
+.admonition.hint .admonition-title,
+.admonition.tip .admonition-title { color: #d9534f; }
 
 div.body p.centered {
   text-align: center;
@@ -513,14 +544,6 @@ div.admonition tt.xref, div.admonition a tt {
 dd div.admonition {
   margin-left: -60px;
   padding-left: 60px;
-}
-
-div.admonition p.admonition-title {
-  font-weight: normal;
-  font-size: 22px;
-  margin: 0 0 10px 0;
-  padding: 0;
-  line-height: 1;
 }
 
 div.admonition p.last {
@@ -745,3 +768,34 @@ span.eqno {
     display: none;
   }
 }
+
+/* API style overrides */
+
+.api-container .api-method h3 {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+  background-color: #428bca;
+  color: #fff;
+  padding: 7px 7px 7px 8px !important;
+  margin-bottom: 0 !important;
+  border-bottom: none;
+  border: none !important;
+  border-radius: 5px 5px 0 0;
+}
+
+.api-container .api-method-signature {
+  font-family: monospace;
+  font-size: 15px;
+  padding: 6px;
+  margin-top: 0;
+  border-radius: 0 0 5px 5px;
+}
+
+.api-container .api-method-params h4 ~ *,
+.api-container .api-method-returns h4 ~ * {
+  margin-left: 24px;
+}
+
+.api-container dl.method { height: 0; width: 0; overflow: hidden; border: none; position: absolute; }
+#api-tree ul { list-style-type: none; }
+#api-tree ul li { padding: 2px; }
+#api-tree .api-tree-bd { display: none; }
