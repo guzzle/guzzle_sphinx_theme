@@ -799,3 +799,16 @@ span.eqno {
 #api-tree ul { list-style-type: none; }
 #api-tree ul li { padding: 2px; }
 #api-tree .api-tree-bd { display: none; }
+
+div.body .api-method-params h5 {
+  display: block;
+  padding: 6px;
+  margin: 25px 0;
+  line-height: 1.428571429;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #333;
+  background-color: #f5f5f5;
+  border-left: 3px solid #ccc;
+  font-family: monospace;
+}
