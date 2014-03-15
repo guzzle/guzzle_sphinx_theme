@@ -2,11 +2,10 @@
 
 {# Do this so that bootstrap is included before the main css file #}
 {%- block htmltitle %}
+  {% set script_files = script_files + ["_static/myscript.js"] %}
   <link rel="stylesheet" type="text/css" href="{{ pathto('_static/css/bootstrap.min.css', 1) }}" />
   <link rel="stylesheet" type="text/css" href="{{ pathto('_static/css/bootstrap-theme.min.css', 1) }}" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="text/javascript" src="{{ pathto('_static/js/jquery-1.9.1.min.js', 1)}}"></script>
-  <script type="text/javascript" src="{{ pathto('_static/js/bootstrap.min.js', 1)}}"></script>
   {{ super() }}
 {%- endblock %}
 
@@ -139,12 +138,13 @@
 
 {%- block footer %}
 
+  <script type="text/javascript" src="{{ pathto('_static/js/bootstrap.js', 1)}}"></script>
   {%- block footer_wrapper %}
   <div class="footer container">
     &copy; Copyright {{ copyright }}. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
   {%- endblock %}
-
+  
   {%- block ga %}
     {%- if theme_google_analytics_account %}
     <script type="text/javascript">
