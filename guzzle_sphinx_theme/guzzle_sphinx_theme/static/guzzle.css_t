@@ -496,9 +496,7 @@ p.topic-title {
   margin: 20px 0;
   padding: 20px;
   background-color: #fafafa;
-  border-width: 0 0 0 3px;
-  border-color: #eee;
-  border-style: solid;
+  border: none;
 }
 
 .admonition dt {
@@ -512,9 +510,10 @@ p.topic-title {
 .admonition-title {
   margin: 0px 0 5px;
   padding: 0;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 18px;
   line-height: 1.1;
+  text-decoration: underline;
 }
 
 .admonition.danger,
