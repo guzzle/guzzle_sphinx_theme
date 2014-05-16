@@ -24,9 +24,6 @@ Add the following to your conf.py:
 
     import guzzle_sphinx_theme
 
-    # Uses a Guzzle style Pygments theme
-    pygments_style = 'guzzle_sphinx_theme.GuzzleStyle'
-
     # Adds an HTML table visitor to apply Bootstrap table classes
     html_translator_class = 'guzzle_sphinx_theme.HTMLTranslator'
     html_theme_path = guzzle_sphinx_theme.html_theme_path()
