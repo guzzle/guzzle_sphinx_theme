@@ -843,6 +843,7 @@ span.eqno {
   .text-primary,
   .navbar>.container .navbar-brand {
     color: {{theme_highlight_color}};
+  }
 
   .bg-primary {
     background-color: {{theme_highlight_color}}
