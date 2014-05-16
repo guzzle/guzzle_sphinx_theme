@@ -35,6 +35,28 @@ Add the following to your conf.py:
     # Guzzle theme options (see theme.conf for more information)
     html_theme_options = {
 
+        # Set the name of the project to appear in the nav menu
+        "project_nav_name": "Project Name",
+
+    }
+
+There are a lot more ways to customize this theme, as this more comprehensive example shows:
+
+.. code-block:: python
+
+    import guzzle_sphinx_theme
+
+    # Adds an HTML table visitor to apply Bootstrap table classes
+    html_translator_class = 'guzzle_sphinx_theme.HTMLTranslator'
+    html_theme_path = guzzle_sphinx_theme.html_theme_path()
+    html_theme = 'guzzle_sphinx_theme'
+
+    # Register the theme as an extension to generate a sitemap.xml
+    extensions.append("guzzle_sphinx_theme")
+
+    # Guzzle theme options (see theme.conf for more information)
+    html_theme_options = {
+
         # Set the path to a special layout to include for the homepage
         "index_template": "special_index.html",
 
@@ -60,6 +82,27 @@ Add the following to your conf.py:
         # Specify a base_url used to generate sitemap.xml links. If not
         # specified, then no sitemap will be built.
         "base_url": ""
+
+        # Allow a separate homepage from the master_doc
+        homepage = index
+
+        # Allow the "Table of Contents" page to be defined separately from "master_doc"
+        tospage = Contents
+
+        # Allow the project link to be overriden to a custom URL.
+        projectlink = http://myproject.url
+
+        # Accept a list of URLs for the nav bar.
+        "navlinks": {
+            "Blog": "http://blog.myproject.url”
+        },
+
+        # Changes the default highlight color (which includes the navbar line and links)
+        highlight_color = #428bca
+
+        # Changes the color of links in the content area.
+        bodylink_color = #428bca
+
     }
 
 Customizing the layout
