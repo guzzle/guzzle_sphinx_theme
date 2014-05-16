@@ -97,12 +97,6 @@ There are a lot more ways to customize this theme, as this more comprehensive ex
             "Blog": "http://blog.myproject.url”
         },
 
-        # Changes the default highlight color (which includes the navbar line and links)
-        highlight_color = #428bca
-
-        # Changes the color of links in the content area.
-        bodylink_color = #428bca
-
     }
 
 Customizing the layout
