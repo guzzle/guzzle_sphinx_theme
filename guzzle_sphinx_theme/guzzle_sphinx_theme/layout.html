@@ -115,6 +115,11 @@
           {%- if theme_github_user and theme_github_repo %}
           <li><a href="https://github.com/{{ theme_github_user }}/{{ theme_github_repo }}">Github</a></li>
           {%- endif %}
+          {%- if theme_navlinks %}
+            {% for key, value in theme_navlinks.iteritems() %}
+              <li><a href="{{value}}">{{key}}</a></li>
+            {% endfor %}
+          {%- endif %}
         {%- endblock %}
         {% include "nav_links.html" ignore missing %}
       </ul>
