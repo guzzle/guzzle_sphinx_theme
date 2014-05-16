@@ -18,29 +18,29 @@
 
 {# Displays the URL for the homepage if it's set or the master_doc if it is not #}
 {% macro homepage() -%}
-{%- if theme_homepage %}
-{{ pathto(theme_homepage) }}
-{%- else %}
-{{ pathto(master_doc) }}
-{%- endif %}
+  {%- if theme_homepage %}
+    {{ pathto(theme_homepage) }}
+  {%- else %}
+    {{ pathto(master_doc) }}
+  {%- endif %}
 {%- endmacro %}
 
-{# Displays the URL for the tospage if it's set or falls back to homepage macro
+{# Displays the URL for the tospage if it's set or falls back to homepage macro #}
 {% macro tospage() -%}
-{%- if theme_tospage %}
-{{ pathto(theme_tospage) }}
-{%- else %}
-{{ homepage() }}
-{%- endif %}
+  {%- if theme_tospage %}
+    {{ pathto(theme_tospage) }}
+  {%- else %}
+    {{ homepage() }}
+  {%- endif %}
 {%- endmacro %}
 
-{# Displays the URL for the projectpage if it's set or falls back to homepage macro
+{# Displays the URL for the projectpage if it's set or falls back to homepage macro #}
 {% macro projectlink() -%}
-{%- if theme_projectlink %}
-{{ pathto(theme_projectlink) }}
-{%- else %}
-{{ homepage() }}
-{%- endif %}
+  {%- if theme_projectlink %}
+    {{ pathto(theme_projectlink) }}
+  {%- else %}
+    {{ homepage() }}
+  {%- endif %}
 {%- endmacro %}
 
 {# Displays the next and previous links both before and after content #}
