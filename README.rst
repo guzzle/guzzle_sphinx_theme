@@ -87,7 +87,7 @@ There are a lot more ways to customize this theme, as this more comprehensive ex
         homepage = index
 
         # Allow the "Table of Contents" page to be defined separately from "master_doc"
-        tospage = Contents
+        tocpage = Contents
 
         # Allow the project link to be overriden to a custom URL.
         projectlink = http://myproject.url
