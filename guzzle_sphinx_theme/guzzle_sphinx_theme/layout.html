@@ -16,6 +16,45 @@
   {{ super() }}
 {% endblock %}
 
+{# Displays the URL for the homepage if it's set or the master_doc if it is not #}
+{% macro homepage() -%}
+  {%- if theme_homepage %}
+    {%- if hasdoc(theme_homepage) %}
+      {{ pathto(theme_homepage) }}
+    {%- else %}
+      {{ theme_homepage }}
+    {%- endif %}
+  {%- else %}
+    {{ pathto(master_doc) }}
+  {%- endif %}
+{%- endmacro %}
+
+{# Displays the URL for the tospage if it's set or falls back to homepage macro #}
+{% macro tospage() -%}
+  {%- if theme_tospage %}
+    {%- if hasdoc(theme_tospage) %}
+      {{ pathto(theme_tospage) }}
+    {%- else %}
+      {{ theme_tospage }}
+    {%- endif %}
+  {%- else %}
+    {{ homepage() }}
+  {%- endif %}
+{%- endmacro %}
+
+{# Displays the URL for the projectpage if it's set or falls back to homepage macro #}
+{% macro projectlink() -%}
+  {%- if theme_projectlink %}
+    {%- if hasdoc(theme_projectlink) %}
+      {{ pathto(theme_projectlink) }}
+    {%- else %}
+      {{ theme_projectlink }}
+    {%- endif %}
+  {%- else %}
+    {{ homepage() }}
+  {%- endif %}
+{%- endmacro %}
+
 {# Displays the next and previous links both before and after content #}
 {% macro render_relations(class='footer-links', add_spacer=0) -%}
   {% if prev or next %}
@@ -47,7 +86,7 @@
     <div class="sphinxsidebarwrapper">
       {%- block sidebarlogo %}
       {%- if logo %}
-        <p class="logo"><a href="{{ pathto(master_doc) }}">
+        <p class="logo"><a href="{{ homepage() }}">
           <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
         </a></p>
       {%- endif %}
@@ -79,14 +118,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{ pathto(master_doc) }}">{{ theme_project_nav_name }}</a>
+      <a class="navbar-brand" href="{{ projectlink() }}">{{ theme_project_nav_name }}</a>
     </div>
     <div class="collapse navbar-collapse" id="toggle-main-nav">
       <ul class="nav navbar-nav">
         {%- block nav_links %}
-          <li><a href="{{ pathto(master_doc) }}">Home</a></li>
+          <li><a href="{{ homepage() }}">Home</a></li>
           {%- if theme_github_user and theme_github_repo %}
           <li><a href="https://github.com/{{ theme_github_user }}/{{ theme_github_repo }}">Github</a></li>
+          {%- endif %}
+          {%- if theme_navlinks %}
+            {% for key, value in theme_navlinks.iteritems() %}
+              <li><a href="{{value}}">{{key}}</a></li>
+            {% endfor %}
           {%- endif %}
         {%- endblock %}
         {% include "nav_links.html" ignore missing %}
