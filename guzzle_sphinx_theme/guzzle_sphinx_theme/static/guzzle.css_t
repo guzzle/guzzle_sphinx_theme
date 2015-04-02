@@ -2,11 +2,10 @@
 -------------------------------------------------- */
 
 body {
-  border-top: 10px solid #f4f8fa;
   background-color: white;
   margin: 0 auto;
-  padding: 20px 30px 15px 20px;
-  font-family: "Source Serif Pro", Georgia, Times, "Times New Roman", serif;
+  padding: 30px 30px 15px 20px;
+  font-family: Lato, Helvetica, Arial, sans-serif;
   font-size: 18px;
   color: #333;
   line-height: 1.428571429;
@@ -36,6 +35,7 @@ h1, h2, h3, h4, h5, h6 {
   color: black;
   font-weight: normal;
   padding: 0;
+  font-family: "Fira Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h1, h2, h3 {
@@ -47,25 +47,29 @@ h1 {
   font-size: 42px;
   text-align: center;
   padding: 0 0 0.3em 0;
-  border-bottom: 1px solid #777;
-  margin: 0 0 35px 0;
+  border-bottom: 1px solid #CCC;
+  margin: 20px 0 35px 0;
 }
 
 h2 {
+  margin-top: 40px;
   font-size: 34px;
   padding: .2em 0;
   border-bottom: 1px solid #ddd;
 }
 
 h3 {
+  margin-top: 35px;
   font-size: 28px;
 }
 
 h4 {
+  margin-top: 30px;
   font-size: 24px;
 }
 
 h5 {
+  margin-top: 25px;
   font-size: 20px;
 }
 
@@ -73,7 +77,10 @@ div.clearer {
   clear: both;
 }
 
-.container-wrapper { padding: 0 15px; }
+.container-wrapper {
+  padding: 0 15px;
+  max-width: 1200px;
+}
 
 div.related {
   display: none;
@@ -82,7 +89,7 @@ div.related {
 p {
   margin: 1.2em auto;
   padding: 0 15px;
-  font-family: "Source Serif Pro", Georgia, Times, "Times New Roman", serif;
+  font-family: inherit;
   font-size: inherit;
   color: #333;
   line-height: 1.428571429;
@@ -134,15 +141,6 @@ dl dd {
 /* Sphinx sidebar
 -------------------------------------------------- */
 
-div.sphinxsidebar a {
-  color: #444;
-  text-decoration: none;
-}
-
-div.sphinxsidebar a:hover {
-  border-bottom: 1px solid #999;
-}
-
 div.sphinxsidebar {
   word-wrap: break-word;
 }
@@ -153,7 +151,6 @@ div.sphinxsidebar .panel-default > .panel-heading {
 
 div.sphinxsidebarwrapper .text-logo {
   font-size: 30px;
-  font-weight: bold;
   text-align: center;
   display: block;
   padding: 8px;
@@ -169,11 +166,6 @@ div.sphinxsidebarwrapper .text-logo:hover {
   border-bottom: none;
 }
 
-div.sphinxsidebarwrapper p.logo {
-  padding: 0 0 8px 0;
-  margin: 0 0 12px 0;
-}
-
 div.sphinxsidebar h3,
 div.sphinxsidebar h4 {
   color: #444;
@@ -187,21 +179,6 @@ div.sphinxsidebar h4 {
   font-size: 16px;
 }
 
-div.sphinxsidebar h3 a {
-  color: #444;
-}
-
-div.sphinxsidebar p.logo a,
-div.sphinxsidebar h3 a,
-div.sphinxsidebar p.logo a:hover,
-div.sphinxsidebar h3 a:hover {
-  border: none;
-}
-
-div.sphinxsidebarwrapper h3.logo {
-  margin: 0;
-}
-
 div.sphinxsidebar p {
   color: #555;
   margin: 10px 0;
@@ -213,19 +190,43 @@ div.sphinxsidebar ul {
   color: #000;
 }
 
+div.sphinxsidebar .sidebar-toc a {
+  font-family: "Fira Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+  text-decoration: none;
+}
+
 .sidebar-toc > ul {
     padding: 0 !important;
+    list-style-type: none;
+    margin: 0;
+}
+
+.sidebar-toc ul li a {
+  display: block;
+  padding: 5px 3px;
+}
+
+.sidebar-toc ul li a:hover {
+  background-color: #eee;
+  color: inherit;
+}
+
+.sidebar-toc ul li.current > a {
+  background-color: #f4f8fa;
 }
 
 div.sphinxsidebar ul.want-points {
-  margin-left: 20px;
-  list-style: square;
+  padding-left: 20px;
+  margin: 0;
 }
 
 div.sphinxsidebar ul ul {
-  margin-top: 0;
-  margin-bottom: 0;
-  list-style: square;
+  margin: 0;
+  padding: 0;
+}
+
+div.sphinxsidebar ul ul a {
   padding-left: 20px;
 }
 
@@ -254,6 +255,11 @@ div.sphinxsidebar input {
 
 .sidebar-block .bd {
   font-size: 16px;
+}
+
+.body .breadcrumb {
+  font-size: 15px;
+  margin-bottom: 12px;
 }
 
 /* Two-pane table list
@@ -426,7 +432,7 @@ div.genindex-jumpbox {
 /* -- general body styles --------------------------------------------------- */
 
 div.body {
-  padding-left: 40px;
+  padding-left: 50px;
 }
 
 div.body p.caption {
@@ -512,7 +518,9 @@ p.topic-title {
   margin: 20px 0;
   padding: 20px;
   background-color: #fafafa;
-  border: none;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
 }
 
 .admonition .last {
@@ -534,6 +542,7 @@ p.topic-title {
   font-weight: normal;
   font-size: 18px;
   line-height: 1.1;
+  font-family: "Fira Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .admonition.danger,
@@ -758,12 +767,22 @@ span.eqno {
 /* Small screen styles
 -------------------------------------------------- */
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   body {
-    padding: 20px 10px 15px 10px;
+    padding: 10px;
+    margin: 0;
   }
-  div.sphinxsidebar p.logo {
+  div.sphinxsidebar .text-logo {
     display: none;
+  }
+  .document .col-md-3 {
+    display: none;
+    margin: 0;
+    padding: 0;
+  }
+  .document .col-md-9 {
+    margin: 0;
+    padding: 0;
   }
 }
 

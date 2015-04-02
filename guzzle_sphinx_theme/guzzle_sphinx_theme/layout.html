@@ -3,6 +3,7 @@
 {# Do this so that bootstrap is included before the main css file #}
 {%- block htmltitle %}
   {% set script_files = script_files + ["_static/myscript.js"] %}
+  <link href='http://fonts.googleapis.com/css?family=Fira+Sans|Lato|Source+Code+Pro' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="{{ pathto('_static/css/bootstrap.min.css', 1) }}" />
   <link rel="stylesheet" type="text/css" href="{{ pathto('_static/css/bootstrap-theme.min.css', 1) }}" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -109,6 +110,17 @@
               {%- block sidebar1 %}{{ guzzle_sidebar() }}{% endblock %}
               {%- block document %}
                 <div class="col-md-9 body">
+                  {% block breadcrumbs %}
+                  <div role="navigation" aria-label="breadcrumbs navigation">
+                    <ol class="breadcrumb">
+                      <li><a href="{{ pathto(master_doc) }}">Docs</a></li>
+                      {% for doc in parents %}
+                        <li><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
+                      {% endfor %}
+                      <li>{{ title }}</li>
+                    </ol>
+                  </div>
+                  {% endblock %}
                   {% block body %} {% endblock %}
                   {%- block bottom_rel_links %}
                     {{ render_relations() }}
@@ -136,8 +148,12 @@
 
   <script type="text/javascript" src="{{ pathto('_static/js/bootstrap.js', 1)}}"></script>
   {%- block footer_wrapper %}
-  <div class="footer container">
-    &copy; Copyright {{ copyright }}. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  <div class="container-wrapper">
+    <div class="container-fluid">
+      <div class="footer">
+        &copy; Copyright {{ copyright }}. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+      </div>
+    </div>
   </div>
   {%- endblock %}
 

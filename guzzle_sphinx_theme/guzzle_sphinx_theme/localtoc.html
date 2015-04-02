@@ -1,9 +1,10 @@
 {%- if display_toc %}
 <div class="sidebar-block hidden-sm hidden-xs">
-  <h2><a href="{{ tospage() }}">{{ _('Table Of Contents') }}</a></h2>
+  <h2>{{ _('Table Of Contents') }}</h2>
   <div class="bd sidebar-toc">
-    {% if pagename == 'index' %}
-      {{ toctree(maxdepth=1, collapse=False, includehidden=True) }}
+    {% set toctree = toctree(maxdepth=2, collapse=True, includehidden=True) %}
+    {% if toctree %}
+      {{ toctree }}
     {% else %}
       {{ toc }}
     {% endif %}
