@@ -56,27 +56,19 @@
 {%- endmacro %}
 
 {# Displays the next and previous links both before and after content #}
-{% macro render_relations(class='footer-links', add_spacer=0) -%}
+{% macro render_relations() -%}
   {% if prev or next %}
-    <div class="{{ class }}">
-      <ul class="breadcrumb pull-right">
-        {%- if prev and prev.title != '&lt;no title&gt;' %}
-        <li>
-          <a href="{{ prev.link|e }}" title="{{ _('previous chapter')}} (use the left arrow)">&larr; {{ prev.title }}</a>
-          {%- if next and next.title != '&lt;no title&gt;' %}
-          <span class="divider"></span>
-          {% endif %}
-        </li>
-        {%- endif %}
-        {%- if next and next.title != '&lt;no title&gt;' %}
-          <li><a href="{{ next.link|e }}" title="{{ _('next chapter')}} (use the right arrow)">{{ next.title }} &rarr;</a></li>
-        {%- endif %}
-      </ul>
+    <div class="footer-relations">
+      <div class="pull-left">
+        <a href="{{ prev.link|e }}" title="{{ _('previous chapter')}} (use the left arrow)">{{ prev.title }}</a>
+      </div>
+    {%- if next and next.title != '&lt;no title&gt;' %}
+      <div class="pull-right">
+        <a href="{{ next.link|e }}" title="{{ _('next chapter')}} (use the right arrow)">{{ next.title }}</a>
+      </div>
+    {%- endif %}
     </div>
-  {% else %}
-    {% if add_spacer %}
-      <div class="clearer"></div>
-    {% endif %}
+    <div class="clearer"></div>
   {% endif %}
 {%- endmacro %}
 
@@ -89,6 +81,8 @@
         <p class="logo"><a href="{{ homepage() }}">
           <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
         </a></p>
+      {% else %}
+      <a href="{{ homepage() }}" class="text-logo">{{ theme_project_nav_name }}</a>
       {%- endif %}
       {%- endblock %}
       {%- if sidebars != None %}
@@ -102,45 +96,6 @@
   {%- endif %}
 {%- endmacro %}
 
-{% block header %}
-<nav class="navbar navbar-default navbar-fixed-top {{ theme_navbar_class }}" role="navigation">
-  <div class="container">
-    {%- if theme_github_user and theme_github_repo %}
-    <div class="visible-md visible-lg navbar-text pull-right" id="github-stars">
-      <iframe src="http://ghbtns.com/github-btn.html?user={{ theme_github_user }}&repo={{ theme_github_repo }}&type=watch&count=true&size=small"
-      allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
-    </div>
-    {%- endif %}
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#toggle-main-nav">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="{{ projectlink() }}">{{ theme_project_nav_name }}</a>
-    </div>
-    <div class="collapse navbar-collapse" id="toggle-main-nav">
-      <ul class="nav navbar-nav">
-        {%- block nav_links %}
-          <li><a href="{{ homepage() }}">Home</a></li>
-          {%- if theme_github_user and theme_github_repo %}
-          <li><a href="https://github.com/{{ theme_github_user }}/{{ theme_github_repo }}">Github</a></li>
-          {%- endif %}
-          {%- if theme_navlinks %}
-            {% for key, value in theme_navlinks.iteritems() %}
-              <li><a href="{{value}}">{{key}}</a></li>
-            {% endfor %}
-          {%- endif %}
-        {%- endblock %}
-        {% include "nav_links.html" ignore missing %}
-      </ul>
-    </div>
-  </div>
-</nav>
-{{ super() }}
-{% endblock %}
-
 {%- block content %}
 
   {%- if pagename == 'index' and theme_index_template %}
@@ -149,25 +104,19 @@
     <div class="container-wrapper">
         <div class="container-fluid">
 
-          {%- block top_rel_links %}
-            {{ render_relations('top-links', 1) }}
-          {%- endblock %}
-
           {%- block document_wrapper %}
             <div class="row document clearer">
               {%- block sidebar1 %}{{ guzzle_sidebar() }}{% endblock %}
               {%- block document %}
                 <div class="col-md-9 body">
                   {% block body %} {% endblock %}
+                  {%- block bottom_rel_links %}
+                    {{ render_relations() }}
+                  {%- endblock %}
                 </div>
               {%- endblock %}
-              {%- block sidebar2 %}{# Place holder for other sidebar #}{% endblock %}
               <div class="clearfix"></div>
             </div>
-          {%- endblock %}
-
-          {%- block bottom_rel_links %}
-            {{ render_relations('footer-links') }}
           {%- endblock %}
 
           {%- block comments -%}
@@ -191,7 +140,7 @@
     &copy; Copyright {{ copyright }}. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
   </div>
   {%- endblock %}
-  
+
   {%- block ga %}
     {%- if theme_google_analytics_account %}
     <script type="text/javascript">
@@ -208,4 +157,3 @@
   {%- endblock %}
 
 {%- endblock %}
-

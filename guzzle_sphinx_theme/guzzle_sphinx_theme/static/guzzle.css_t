@@ -2,32 +2,17 @@
 -------------------------------------------------- */
 
 body {
-  position: relative;
-  padding: 70px 0 0 0;
-  font-family: Helvetica, arial, freesans, clean, sans-serif;
-}
-
-.navbar {
-  margin-bottom: 0;
-  border-bottom: 2px solid #428bca;
-  font-size: 16px;
-}
-
-div.clearer {
-  clear: both;
-}
-
-.container-wrapper { padding: 0 15px; }
-.container-fluid { max-width: 1440px; }
-
-div.document {
+  border-top: 10px solid #f4f8fa;
+  background-color: white;
   margin: 0 auto;
-  font-size: 15px;
-  line-height: 1.5em;
-}
-
-div.related {
-  display: none;
+  padding: 20px 30px 15px 20px;
+  font-family: "Source Serif Pro", Georgia, Times, "Times New Roman", serif;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.428571429;
+  -webkit-font-feature-settings: "kern", "liga";
+  -moz-font-feature-settings: "kern", "liga";
+  font-feature-settings: "kern", "liga";
 }
 
 a.headerlink {
@@ -47,91 +32,95 @@ dt:hover > a.headerlink {
   visibility: visible;
 }
 
-a.headerlink:hover {
-  color: #444;
-  background: #eaeaea;
-  text-decoration: none;
-}
-
-div.body h1,
-div.body h2,
-div.body h3,
-div.body h4,
-div.body h5,
-div.body h6 {
-  font-family: Helvetica, arial, freesans, clean, sans-serif;
+h1, h2, h3, h4, h5, h6 {
+  color: black;
   font-weight: normal;
-  margin: 30px 0px 10px 0px;
   padding: 0;
 }
 
-div.body h1 { margin-top: 0; padding-top: 0; font-size: 240%; font-weight: bold; }
-div.body h2 { font-size: 180%; border-bottom: 1px solid #ccc; padding-bottom: 6px; font-weight: bold; }
-div.body h3 { font-size: 150%; font-weight: bold; }
-div.body h4 { font-size: 130%; }
-div.body h5 { font-size: 110%; }
-div.body h6 { font-size: 100%; }
-
-p {
-  margin: 1em 0;
+h1, h2, h3 {
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
-div.body p, div.body dd, div.body li {
-  line-height: 1.5em;
+h1 {
+  font-size: 42px;
+  text-align: center;
+  padding: 0 0 0.3em 0;
+  border-bottom: 1px solid #777;
+  margin: 0 0 35px 0;
+}
+
+h2 {
+  font-size: 34px;
+  padding: .2em 0;
+  border-bottom: 1px solid #ddd;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+div.clearer {
+  clear: both;
+}
+
+.container-wrapper { padding: 0 15px; }
+
+div.related {
+  display: none;
+}
+
+p {
+  margin: 1.2em auto;
+  padding: 0 15px;
+  font-family: "Source Serif Pro", Georgia, Times, "Times New Roman", serif;
+  font-size: inherit;
+  color: #333;
+  line-height: 1.428571429;
+  -webkit-font-feature-settings: "kern", "liga";
+  -moz-font-feature-settings: "kern", "liga";
+  font-feature-settings: "kern", "liga";
+}
+
+code, pre, tt {
+  font-family: "Source Code Pro", Menlo, Monaco, Consolas, "DejaVu Sans Mono", monospace;
+  color: #333;
 }
 
 tt {
-  font-family: Consolas, Monaco, Menlo, "Courier New", monospace;
-  font-size: 14px;
+  padding: 0 4px;
+  font-size: 17px;
 }
 
 code, pre {
-  font-family: Consolas, Monaco, Menlo, "Courier New", monospace;
   font-size: 14px;
-  color: #333333;
   line-height: 23px;
   margin: 20px 0;
+  overflow: auto;
+  word-wrap: normal;
 }
 
 pre {
-    border: 1px solid #e1e1e8;
-    padding: 9px 14px;
-    background-color: #f7f7f7;
+    background-color: #fff;
+    border-width: 0 0 0 2px;
+    border-color: #eee;
+    border-style: solid;
+    padding: 14px 0 14px 20px;
+    padding-right: 0;
+    margin: 20px 0;
 }
 
 div.highlight {
   background-color: white;
-}
-
-.navbar>.container .navbar-brand {
-  margin: 0 10px 0 0;
-  color: #428bca;
-  font-weight: bold;
-}
-
-[class^="icon-"],
-[class*=" icon-"] {
-  background-image: url("../_static/glyphicons-halflings.png");
-}
-
-.icon-white,
-.nav-pills > .active > a > [class^="icon-"],
-.nav-pills > .active > a > [class*=" icon-"],
-.nav-list > .active > a > [class^="icon-"],
-.nav-list > .active > a > [class*=" icon-"],
-.navbar-inverse .nav > .active > a > [class^="icon-"],
-.navbar-inverse .nav > .active > a > [class*=" icon-"],
-.dropdown-menu > li > a:hover > [class^="icon-"],
-.dropdown-menu > li > a:focus > [class^="icon-"],
-.dropdown-menu > li > a:hover > [class*=" icon-"],
-.dropdown-menu > li > a:focus > [class*=" icon-"],
-.dropdown-menu > .active > a > [class^="icon-"],
-.dropdown-menu > .active > a > [class*=" icon-"],
-.dropdown-submenu:hover > a > [class^="icon-"],
-.dropdown-submenu:focus > a > [class^="icon-"],
-.dropdown-submenu:hover > a > [class*=" icon-"],
-.dropdown-submenu:focus > a > [class*=" icon-"] {
-  background-image: url("../_static/glyphicons-halflings-white.png");
 }
 
 a.internal em {
@@ -139,8 +128,7 @@ a.internal em {
 }
 
 dl dd {
-  margin-left: 30px;
-  margin: 3px 0 10px 30px;
+  margin: 3px 0 10px 40px;
 }
 
 /* Sphinx sidebar
@@ -163,6 +151,24 @@ div.sphinxsidebar .panel-default > .panel-heading {
     background-image: none;
 }
 
+div.sphinxsidebarwrapper .text-logo {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  padding: 8px;
+  color: #428bca;
+  font-family: "Fira Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0 0 20px 0;
+}
+
+div.sphinxsidebarwrapper .text-logo:hover {
+  background-color: #f4f8fa;
+  text-decoration: none;
+  color: #428bca;
+  border-bottom: none;
+}
+
 div.sphinxsidebarwrapper p.logo {
   padding: 0 0 8px 0;
   margin: 0 0 12px 0;
@@ -170,7 +176,6 @@ div.sphinxsidebarwrapper p.logo {
 
 div.sphinxsidebar h3,
 div.sphinxsidebar h4 {
-  font-family: Helvetica, arial, freesans, clean, sans-serif;
   color: #444;
   font-size: 20px;
   font-weight: normal;
@@ -208,7 +213,7 @@ div.sphinxsidebar ul {
   color: #000;
 }
 
-.panel-toc > ul {
+.sidebar-toc > ul {
     padding: 0 !important;
 }
 
@@ -232,6 +237,23 @@ div.sphinxsidebar input {
 
 .margin-top-1em {
   margin-top: 1em;
+}
+
+.sidebar-block {
+  padding: 0 10px;
+  margin: 14px 0 40px 0;
+}
+
+.sidebar-block h2 {
+  border-bottom: 1px solid #ccc;
+  margin: 0 0 18px 0;
+  font-size: 24px;
+  text-align: center;
+  padding: 0 0 6px 0;
+}
+
+.sidebar-block .bd {
+  font-size: 16px;
 }
 
 /* Two-pane table list
@@ -278,22 +300,12 @@ table.two-column {
 /* Next and previous links
 -------------------------------------------------- */
 
-.top-links .breadcrumb {
-  margin: -10px 0 0 0;
-}
-
-.top-links .breadcrumb, .footer-links .breadcrumb {
-  background-color: #fff;
-}
-
-.top-links a {
-  opacity: 0.7;
-}
-
-.footer-links {
+.footer-relations {
+  display: relative;
   border-top: 1px solid #ccc;
   padding-top: 12px;
   margin-top: 30px;
+  font-size: 24px;
 }
 
 .rel-spacer {
@@ -413,6 +425,10 @@ div.genindex-jumpbox {
 
 /* -- general body styles --------------------------------------------------- */
 
+div.body {
+  padding-left: 40px;
+}
+
 div.body p.caption {
   text-align: inherit;
 }
@@ -499,6 +515,11 @@ p.topic-title {
   border: none;
 }
 
+.admonition .last {
+  background-color: white;
+  padding: 10px;
+}
+
 .admonition dt {
   font-weight: bold;
 }
@@ -510,10 +531,9 @@ p.topic-title {
 .admonition-title {
   margin: 0px 0 5px;
   padding: 0;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 18px;
   line-height: 1.1;
-  text-decoration: underline;
 }
 
 .admonition.danger,
@@ -738,37 +758,11 @@ span.eqno {
 /* Small screen styles
 -------------------------------------------------- */
 
-@media screen and (max-device-width: 480px) {
-
+@media screen and (max-width: 480px) {
   body {
-    margin: 0;
-    padding-top: 0;
+    padding: 20px 10px 15px 10px;
   }
-
-  .body {
-    width: 100%;
-    float: none;
-    min-height: 0;
-    padding: 10px;
-    margin-top: 20px;
-  }
-
-  .navbar-fixed-top {
-    position: static;
-  }
-
-  div.sphinxsidebar {
-    float: none;
-    width: 100%;
-    margin: 0 0 24px 0;
-    padding: 10px 20px;
-  }
-
   div.sphinxsidebar p.logo {
-    display: none;
-  }
-
-  #github-stars {
     display: none;
   }
 }

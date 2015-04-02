@@ -1,10 +1,12 @@
 {%- if display_toc %}
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3><a href="{{ tospage() }}">{{ _('Table Of Contents') }}</a></h3>
-  </div>
-  <div class="panel-body panel-toc">
-    {{ toc }}
+<div class="sidebar-block hidden-sm hidden-xs">
+  <h2><a href="{{ tospage() }}">{{ _('Table Of Contents') }}</a></h2>
+  <div class="bd sidebar-toc">
+    {% if pagename == 'index' %}
+      {{ toctree(maxdepth=1, collapse=False, includehidden=True) }}
+    {% else %}
+      {{ toc }}
+    {% endif %}
   </div>
 </div>
 {%- endif %}
