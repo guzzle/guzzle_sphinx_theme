@@ -5,10 +5,10 @@ body {
   background-color: white;
   margin: 0 auto;
   padding: 30px 30px 15px 20px;
-  font-family: Lato, Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 18px;
   color: #333;
-  line-height: 1.428571429;
+  line-height: 1.5;
   -webkit-font-feature-settings: "kern", "liga";
   -moz-font-feature-settings: "kern", "liga";
   font-feature-settings: "kern", "liga";
@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h6 {
   color: black;
   font-weight: normal;
   padding: 0;
-  font-family: "Fira Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Source Serif Pro", "serif";
 }
 
 h1, h2, h3 {
@@ -92,7 +92,6 @@ p {
   font-family: inherit;
   font-size: inherit;
   color: #333;
-  line-height: 1.428571429;
   -webkit-font-feature-settings: "kern", "liga";
   -moz-font-feature-settings: "kern", "liga";
   font-feature-settings: "kern", "liga";
@@ -155,7 +154,7 @@ div.sphinxsidebarwrapper .text-logo {
   display: block;
   padding: 8px;
   color: #428bca;
-  font-family: "Fira Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0 0 20px 0;
 }
 
@@ -191,7 +190,7 @@ div.sphinxsidebar ul {
 }
 
 div.sphinxsidebar .sidebar-toc a {
-  font-family: "Fira Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #444;
   text-decoration: none;
 }
@@ -542,7 +541,7 @@ p.topic-title {
   font-weight: normal;
   font-size: 18px;
   line-height: 1.1;
-  font-family: "Fira Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .admonition.danger,
