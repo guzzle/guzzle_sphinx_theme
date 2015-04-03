@@ -7,11 +7,11 @@ Sphinx theme used by Guzzle: http://guzzlephp.org
 Installation
 ============
 
-Install via pip:
+Install via pip::
 
     $ pip install guzzle_sphinx_theme
 
-or if you have the code checked out locally:
+or if you have the code checked out locally::
 
     $ python setup.py install
 
@@ -120,6 +120,8 @@ Then, configure your "conf.py":
     templates_path = ['_templates']
 
 Finally, edit your override file "source/_templates/layout.html":
+
+::
 
     {# Import the theme's layout. #}
     {% extends "!layout.html" %}
