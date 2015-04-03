@@ -2,16 +2,33 @@
 -------------------------------------------------- */
 
 body {
-  background-color: white;
-  margin: 0 auto;
-  padding: 30px 30px 15px 20px;
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 17px;
   color: #333;
   line-height: 1.5;
   -webkit-font-feature-settings: "kern", "liga";
   -moz-font-feature-settings: "kern", "liga";
   font-feature-settings: "kern", "liga";
+}
+
+#left-column {
+  float: left;
+  position: fixed;
+  height: 100%;
+  border-right: 1px solid #eee;
+  width: 300px;
+  overflow: auto;
+  background: #fafafa;
+}
+
+#right-column {
+  padding: 20px 30px 20px 70px;
+  margin-left: 300px;
+  float: left;
+  background-color: #fff;
 }
 
 a.headerlink {
@@ -45,10 +62,9 @@ h1, h2, h3 {
 
 h1 {
   font-size: 42px;
-  text-align: center;
-  padding: 0 0 0.3em 0;
-  border-bottom: 1px solid #CCC;
-  margin: 20px 0 35px 0;
+  padding: 10px 10px 10px 50px;
+  margin: 20px 0 35px -70px;
+  background-color: aliceblue;
 }
 
 h2 {
@@ -78,8 +94,9 @@ div.clearer {
 }
 
 .container-wrapper {
-  padding: 0 15px;
+  padding: 0;
   max-width: 1200px;
+  position: relative;
 }
 
 div.related {
@@ -104,7 +121,7 @@ code, pre, tt {
 
 tt {
   padding: 0 4px;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 code, pre {
@@ -137,6 +154,12 @@ dl dd {
   margin: 3px 0 10px 40px;
 }
 
+.body .breadcrumb {
+  font-size: 15px;
+  margin-bottom: 12px;
+  background: #fff;
+}
+
 /* Sphinx sidebar
 -------------------------------------------------- */
 
@@ -148,21 +171,8 @@ div.sphinxsidebar .panel-default > .panel-heading {
     background-image: none;
 }
 
-div.sphinxsidebarwrapper .text-logo {
-  font-size: 30px;
-  text-align: center;
-  display: block;
-  padding: 8px;
-  color: #428bca;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin: 0 0 20px 0;
-}
-
-div.sphinxsidebarwrapper .text-logo:hover {
-  background-color: #f4f8fa;
-  text-decoration: none;
-  color: #428bca;
-  border-bottom: none;
+.sidebar-wrapper {
+  padding: 0 22px;
 }
 
 div.sphinxsidebar h3,
@@ -203,16 +213,19 @@ div.sphinxsidebar .sidebar-toc a {
 
 .sidebar-toc ul li a {
   display: block;
-  padding: 5px 3px;
+  padding: 5px 25px;
 }
 
 .sidebar-toc ul li a:hover {
-  background-color: #eee;
-  color: inherit;
+  background-color: #428bca;
+  color: #fff;
 }
 
-.sidebar-toc ul li.current > a {
-  background-color: #f4f8fa;
+.sidebar-toc ul li.current > a,
+.sidebar-toc ul li.current > a:hover {
+  background-color: #eee;
+  border-bottom: 1px solid #ccc;
+  color: #444;
 }
 
 div.sphinxsidebar ul.want-points {
@@ -226,7 +239,7 @@ div.sphinxsidebar ul ul {
 }
 
 div.sphinxsidebar ul ul a {
-  padding-left: 20px;
+  padding-left: 45px;
 }
 
 div.sphinxsidebar input {
@@ -240,7 +253,7 @@ div.sphinxsidebar input {
 }
 
 .sidebar-block {
-  padding: 0 10px;
+  padding: 0;
   margin: 14px 0 40px 0;
 }
 
@@ -248,7 +261,6 @@ div.sphinxsidebar input {
   border-bottom: 1px solid #ccc;
   margin: 0 0 18px 0;
   font-size: 24px;
-  text-align: center;
   padding: 0 0 6px 0;
 }
 
@@ -256,9 +268,43 @@ div.sphinxsidebar input {
   font-size: 16px;
 }
 
-.body .breadcrumb {
+.text-logo {
+  font-size: 30px;
+  text-align: center;
+  display: block;
+  padding: 10px;
+  color: #428bca;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0 0 20px 0;
+}
+
+.text-logo:hover {
+  background-color: #f4f8fa;
+  text-decoration: none;
+  color: #428bca;
+  border-bottom: none;
+}
+
+/* Left-nav search box
+-------------------------------------------------- */
+
+#main-search form .input-group {
+  width: 100%;
+  margin: 0 0 12px 0;
+  padding: 0;
+  border: none;
+}
+
+#main-search form .input-group input {
+  padding: 4px;
+  width: 100%;
+  border-radius: 5px;
+  margin: 0;
   font-size: 15px;
-  margin-bottom: 12px;
+}
+
+.search-page-form {
+  width: 350px;
 }
 
 /* Two-pane table list
@@ -763,27 +809,81 @@ span.eqno {
   height: 250px;
 }
 
+/* Toggle mobile view
+-------------------------------------------------- */
+
+#mobile-toggle {
+  height: 40px;
+  width: 100%;
+  display: none;
+  padding: 12px;
+  border-bottom: 1px solid #ccc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 1;
+}
+
 /* Small screen styles
 -------------------------------------------------- */
 
 @media screen and (max-width: 768px) {
+
   body {
-    padding: 10px;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
+    background-color: #fff;
   }
-  div.sphinxsidebar .text-logo {
-    display: none;
+
+  h1 {
+    margin-left: 0;
   }
-  .document .col-md-3 {
+
+  #left-column {
+    position: relative;
+    top: 0;
+    left: 0;
     display: none;
-    margin: 0;
+    width: 100%;
+    float: none;
+    margin: 40px 0 20px 0;
+  }
+
+  #right-column {
+    margin-left: 0;
+    margin-top: 35px;
     padding: 0;
+    width: 100%;
+    float: none;
   }
-  .document .col-md-9 {
-    margin: 0;
+
+  .document {
+    position: relative;
+    padding: 14px;
+    width: 100%
+  }
+
+  #mobile-toggle {
+    display: block;
+  }
+
+  p {
     padding: 0;
   }
 }
+
+/* Account for when the left column is closed then page is expanded.
+-------------------------------------------------- */
+
+@media screen and (min-width: 769px) {
+  #left-column {
+    display: block !important;
+  }
+}
+
+/* Syntax highlighting
+-------------------------------------------------- */
 
 .hll { background-color: #ffffcc }
 .c { color: #999988; font-style: italic } /* Comment */

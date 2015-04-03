@@ -74,18 +74,8 @@
 {%- endmacro %}
 
 {%- macro guzzle_sidebar() %}
-  {%- if render_sidebar %}
-  <div class="col-md-3 sphinxsidebar">
-    <div class="sphinxsidebarwrapper">
-      {%- block sidebarlogo %}
-      {%- if logo %}
-        <p class="logo"><a href="{{ homepage() }}">
-          <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
-        </a></p>
-      {% else %}
-      <a href="{{ homepage() }}" class="text-logo">{{ theme_project_nav_name }}</a>
-      {%- endif %}
-      {%- endblock %}
+  <div id="left-column">
+    <div class="sphinxsidebar">
       {%- if sidebars != None %}
         {#- new style sidebar: explicitly include/exclude templates #}
         {%- for sidebartemplate in sidebars %}
@@ -94,7 +84,6 @@
       {%- endif %}
     </div>
   </div>
-  {%- endif %}
 {%- endmacro %}
 
 {%- block content %}
@@ -103,48 +92,58 @@
     {% include theme_index_template %}
   {%- else %}
     <div class="container-wrapper">
-        <div class="container-fluid">
 
-          {%- block document_wrapper %}
-            <div class="row document clearer">
-              {%- block sidebar1 %}{{ guzzle_sidebar() }}{% endblock %}
-              {%- block document %}
-                <div class="col-md-9 body">
-                  {% block breadcrumbs %}
-                  <div role="navigation" aria-label="breadcrumbs navigation">
-                    <ol class="breadcrumb">
-                      <li><a href="{{ pathto(master_doc) }}">Docs</a></li>
-                      {% for doc in parents %}
-                        <li><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
-                      {% endfor %}
-                      <li>{{ title }}</li>
-                    </ol>
-                  </div>
-                  {% endblock %}
-                  {% block body %} {% endblock %}
-                  {%- block bottom_rel_links %}
-                    {{ render_relations() }}
-                  {%- endblock %}
-                </div>
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+
+      {%- block sidebar1 %}{{ guzzle_sidebar() }}{% endblock %}
+
+      {%- block document_wrapper %}
+        <div class="document clearer">
+          {%- block document %}
+            <div id="right-column" class="body">
+              {% block breadcrumbs %}
+              <div role="navigation" aria-label="breadcrumbs navigation">
+                <ol class="breadcrumb">
+                  <li><a href="{{ pathto(master_doc) }}">Docs</a></li>
+                  {% for doc in parents %}
+                    <li><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
+                  {% endfor %}
+                  <li>{{ title }}</li>
+                </ol>
+              </div>
+              {% endblock %}
+              {% block body %} {% endblock %}
+              {%- block bottom_rel_links %}
+                {{ render_relations() }}
               {%- endblock %}
-              <div class="clearfix"></div>
             </div>
           {%- endblock %}
 
-          {%- block comments -%}
-            {% if theme_disqus_comments_shortname %}
-            <div class="container comment-container">
-              {% include "comments.html" %}
-            </div>
-            {% endif %}
-          {%- endblock %}
-
+          <div class="clearfix"></div>
         </div>
+      {%- endblock %}
+
+      {%- block comments -%}
+        {% if theme_disqus_comments_shortname %}
+        <div class="container comment-container">
+          {% include "comments.html" %}
+        </div>
+        {% endif %}
+      {%- endblock %}
+
     </div>
   {%- endif %}
 {%- endblock %}
 
 {%- block footer %}
+
+  <script type="text/javascript">
+    $("#mobile-toggle a").click(function () {
+      $("#left-column").toggle();
+    });
+  </script>
 
   <script type="text/javascript" src="{{ pathto('_static/js/bootstrap.js', 1)}}"></script>
   {%- block footer_wrapper %}
