@@ -81,6 +81,10 @@
         {%- for sidebartemplate in sidebars %}
         {%- include sidebartemplate %}
         {%- endfor %}
+      {% else %}
+        {% include "logo-text.html" %}
+        {% include "globaltoc.html" %}
+        {% include "searchbox.html" %}
       {%- endif %}
     </div>
   </div>
