@@ -100,29 +100,28 @@
       {%- block sidebar1 %}{{ guzzle_sidebar() }}{% endblock %}
 
       {%- block document_wrapper %}
-        <div class="document clearer">
-          {%- block document %}
-            <div id="right-column" class="body">
-              {% block breadcrumbs %}
-              <div role="navigation" aria-label="breadcrumbs navigation">
-                <ol class="breadcrumb">
-                  <li><a href="{{ pathto(master_doc) }}">Docs</a></li>
-                  {% for doc in parents %}
-                    <li><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
-                  {% endfor %}
-                  <li>{{ title }}</li>
-                </ol>
-              </div>
-              {% endblock %}
-              {% block body %} {% endblock %}
-              {%- block bottom_rel_links %}
-                {{ render_relations() }}
-              {%- endblock %}
-            </div>
+        {%- block document %}
+        <div id="right-column">
+          {% block breadcrumbs %}
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="{{ pathto(master_doc) }}">Docs</a></li>
+              {% for doc in parents %}
+                <li><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
+              {% endfor %}
+              <li>{{ title }}</li>
+            </ol>
+          </div>
+          {% endblock %}
+          <div class="document clearer body">
+            {% block body %} {% endblock %}
+          </div>
+          {%- block bottom_rel_links %}
+            {{ render_relations() }}
           {%- endblock %}
-
-          <div class="clearfix"></div>
         </div>
+        <div class="clearfix"></div>
+        {%- endblock %}
       {%- endblock %}
 
       {%- block comments -%}

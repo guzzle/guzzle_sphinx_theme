@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   color: #333;
   line-height: 1.5;
   -webkit-font-feature-settings: "kern", "liga";
@@ -25,10 +25,11 @@ body {
 }
 
 #right-column {
-  padding: 20px 30px 20px 70px;
+  padding: 20px 30px 20px 20px;
   margin-left: 300px;
   float: left;
   background-color: #fff;
+  max-width: 900px;
 }
 
 a.headerlink {
@@ -95,7 +96,6 @@ div.clearer {
 
 .container-wrapper {
   padding: 0;
-  max-width: 1200px;
   position: relative;
 }
 
@@ -115,32 +115,35 @@ p {
 }
 
 code, pre, tt {
+  font-size: 16px;
   font-family: "Source Code Pro", Menlo, Monaco, Consolas, "DejaVu Sans Mono", monospace;
-  color: #333;
+}
+
+code, tt {
+  color: #8D1A38;
 }
 
 tt {
-  padding: 0 4px;
-  font-size: 16px;
+  padding: 0 2px;
 }
 
 code, pre {
-  font-size: 14px;
   line-height: 23px;
   margin: 20px 0;
-  overflow: auto;
   word-wrap: normal;
   background-color: #fff;
 }
 
 pre {
-    background-color: #fff;
-    border-width: 0 0 0 2px;
-    border-color: #eee;
-    border-style: solid;
-    padding: 14px 0 14px 20px;
-    padding-right: 0;
-    margin: 20px 0;
+  color: #333;
+  background-color: #fff;
+  overflow: auto;
+  border-width: 0 0 0 2px;
+  border-color: #eee;
+  border-style: solid;
+  padding: 14px 0 14px 20px;
+  padding-right: 0;
+  margin: 20px 0;
 }
 
 div.highlight {
@@ -155,10 +158,21 @@ dl dd {
   margin: 3px 0 10px 40px;
 }
 
-.body .breadcrumb {
+.breadcrumb {
   font-size: 15px;
   margin-bottom: 12px;
   background: #fff;
+}
+
+blockquote {
+  border-width: .1em 0 .1em 0;
+  border-color: #e5eef2;
+  border-style: solid;
+  background-color: #f3f8f9;
+  color: #000;
+  margin: 20px 0;
+  padding: 15px 20px;
+  font-size: 16px;
 }
 
 /* Sphinx sidebar
@@ -477,7 +491,7 @@ div.genindex-jumpbox {
 
 /* -- general body styles --------------------------------------------------- */
 
-div.body {
+.body {
   padding-left: 50px;
 }
 
@@ -856,15 +870,19 @@ span.eqno {
   #right-column {
     margin-left: 0;
     margin-top: 0;
-    padding: 0;
+    padding: 8px 20px;
     width: 100%;
     float: none;
   }
 
   .document {
     position: relative;
-    padding: 14px;
+    padding: 0;
     width: 100%
+  }
+
+  .body {
+    padding: 0px;
   }
 
   #mobile-toggle {
