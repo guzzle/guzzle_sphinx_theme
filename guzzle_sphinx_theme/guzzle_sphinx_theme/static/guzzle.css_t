@@ -130,6 +130,7 @@ code, pre {
   margin: 20px 0;
   overflow: auto;
   word-wrap: normal;
+  background-color: #fff;
 }
 
 pre {
@@ -838,6 +839,8 @@ span.eqno {
 
   h1 {
     margin-left: 0;
+    padding: 10px;
+    font-size: 40px;
   }
 
   #left-column {
@@ -847,12 +850,12 @@ span.eqno {
     display: none;
     width: 100%;
     float: none;
-    margin: 40px 0 20px 0;
+    margin: 40px 0 0 0;
   }
 
   #right-column {
     margin-left: 0;
-    margin-top: 35px;
+    margin-top: 0;
     padding: 0;
     width: 100%;
     float: none;
