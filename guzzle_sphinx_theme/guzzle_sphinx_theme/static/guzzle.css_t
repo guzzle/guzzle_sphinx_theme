@@ -348,14 +348,6 @@ table.two-column {
   box-shadow: none;
 }
 
-/* GitHub stars in the menu
--------------------------------------------------- */
-
-#github-stars iframe {
-  margin: 0;
-  padding: 0;
-}
-
 /* Disqus comments styles
 -------------------------------------------------- */
 
@@ -445,6 +437,10 @@ ul.keywordmatches li.goodmatch a {
 }
 
 /* -- general index --------------------------------------------------------- */
+
+table {
+  margin-bottom: 20px;
+}
 
 table.indextable {
   width: 100%;
@@ -683,10 +679,6 @@ dl.glossary dt {
 .field-list ul {
   margin: 0;
   padding-left: 1em;
-}
-
-.field-list p {
-  margin: 0;
 }
 
 .refcount {
