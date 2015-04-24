@@ -59,13 +59,15 @@
 {# Displays the next and previous links both before and after content #}
 {% macro render_relations() -%}
   {% if prev or next %}
-    <div class="footer-relations">
+  <div class="footer-relations">
+    {% if prev %}
       <div class="pull-left">
-        <a href="{{ prev.link|e }}" title="{{ _('previous chapter')}} (use the left arrow)">{{ prev.title }}</a>
+        <a class="btn btn-default" href="{{ prev.link|e }}" title="{{ _('previous chapter')}} (use the left arrow)">{{ prev.title }}</a>
       </div>
+    {% endif %}
     {%- if next and next.title != '&lt;no title&gt;' %}
       <div class="pull-right">
-        <a href="{{ next.link|e }}" title="{{ _('next chapter')}} (use the right arrow)">{{ next.title }}</a>
+        <a class="btn btn-default" href="{{ next.link|e }}" title="{{ _('next chapter')}} (use the right arrow)">{{ next.title }}</a>
       </div>
     {%- endif %}
     </div>
@@ -135,32 +137,24 @@
         </div>
         {% endif %}
       {%- endblock %}
-
     </div>
   {%- endif %}
-{%- endblock %}
-
-{%- block footer %}
-
-  <script type="text/javascript">
-    $("#mobile-toggle a").click(function () {
-      $("#left-column").toggle();
-    });
-  </script>
-
-  <script type="text/javascript" src="{{ pathto('_static/js/bootstrap.js', 1)}}"></script>
-  {%- block footer_wrapper %}
-  <div class="container-wrapper">
-    <div class="container-fluid">
-      <div class="footer">
-        &copy; Copyright {{ copyright }}. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
-      </div>
-    </div>
-  </div>
   {%- endblock %}
 
-  {%- block ga %}
-    {%- if theme_google_analytics_account %}
+{%- block footer %}
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="{{ pathto('_static/js/bootstrap.js', 1)}}"></script>
+{%- block footer_wrapper %}
+  <div class="footer">
+    &copy; Copyright {{ copyright }}. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+{%- endblock %}
+{%- block ga %}
+  {%- if theme_google_analytics_account %}
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', '{{ theme_google_analytics_account }}']);
@@ -171,7 +165,6 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     </script>
-    {%- endif %}
-  {%- endblock %}
-
+  {%- endif %}
+{%- endblock %}
 {%- endblock %}

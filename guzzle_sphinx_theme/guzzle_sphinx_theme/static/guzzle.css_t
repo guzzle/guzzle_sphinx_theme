@@ -2,7 +2,7 @@
 -------------------------------------------------- */
 
 body {
-  background-color: #fafafa;
+  background-color: #edf0f2;
   margin: 0;
   padding: 0;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
@@ -18,7 +18,7 @@ body {
   float: left;
   position: fixed;
   height: 100%;
-  border-right: 1px solid #eee;
+  border-right: 1px solid #ccc;
   width: 300px;
   overflow: auto;
   background: #fafafa;
@@ -27,7 +27,6 @@ body {
 #right-column {
   padding: 20px 30px 20px 20px;
   margin-left: 300px;
-  float: left;
   background-color: #fff;
   max-width: 900px;
 }
@@ -66,6 +65,10 @@ h1 {
   padding: 10px 10px 10px 50px;
   margin: 20px 0 35px -70px;
   background-color: aliceblue;
+  box-shadow: 0px 2px 2px #efefef;
+  width: calc(100% + 100px);
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
 
 h2 {
@@ -374,10 +377,12 @@ table.two-column {
 -------------------------------------------------- */
 
 div.footer {
-  margin: 20px auto 30px auto;
+  padding: 25px;
   font-size: 14px;
   color: #888;
   text-align: right;
+  max-width: 1200px;
+  width: 100%;
 }
 
 div.footer a {
@@ -488,7 +493,7 @@ div.genindex-jumpbox {
 /* -- general body styles --------------------------------------------------- */
 
 .body {
-  padding-left: 50px;
+  padding-left: 40px;
 }
 
 div.body p.caption {
@@ -845,6 +850,7 @@ span.eqno {
 
   h1 {
     margin-left: 0;
+    width: 100%;
     padding: 10px;
     font-size: 40px;
   }
