@@ -119,7 +119,7 @@ p {
 
 code, pre, tt {
   font-size: 15px;
-  font-family: "Source Code Pro", Menlo, Monaco, Consolas, "DejaVu Sans Mono", monospace;
+  font-family: Consolas, monospace;
 }
 
 code, tt {
