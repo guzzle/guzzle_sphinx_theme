@@ -25,7 +25,7 @@ body {
 }
 
 #right-column {
-  padding: 20px 30px 20px 20px;
+  padding: 20px 0;
   margin-left: 300px;
   background-color: #fff;
   max-width: 900px;
@@ -66,7 +66,7 @@ h1 {
   margin: 20px 0 35px -70px;
   background-color: aliceblue;
   box-shadow: 0px 2px 2px #efefef;
-  width: calc(100% + 100px);
+  width: calc(100% + 130px);
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
 }
@@ -107,8 +107,8 @@ div.related {
 }
 
 p {
-  margin: 1.2em auto;
-  padding: 0 15px;
+  margin: 1.2em 0;
+  padding: 0;
   font-family: inherit;
   font-size: inherit;
   color: #333;
@@ -364,7 +364,7 @@ table.two-column {
 .footer-relations {
   display: relative;
   border-top: 1px solid #ccc;
-  padding-top: 12px;
+  padding: 12px 60px;
   margin-top: 30px;
   font-size: 24px;
 }
@@ -493,7 +493,7 @@ div.genindex-jumpbox {
 /* -- general body styles --------------------------------------------------- */
 
 .body {
-  padding-left: 40px;
+  padding: 0 60px;
 }
 
 div.body p.caption {
@@ -863,6 +863,10 @@ span.eqno {
     width: 100%;
     float: none;
     margin: 40px 0 0 0;
+  }
+
+  .footer-relations {
+    padding: 12px 0;
   }
 
   #right-column {
