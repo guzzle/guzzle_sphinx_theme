@@ -211,7 +211,7 @@ div.sphinxsidebar p {
   margin: 10px 0;
 }
 
-div.sphinxsidebar ul {
+div.sphinxsidebar .sidevar-toc ul {
   margin: 0 0 4px 0;
   list-style-type: none;
   color: #000;
@@ -231,7 +231,6 @@ div.sphinxsidebar .sidebar-toc a {
 
 .sidebar-toc ul li a {
   display: block;
-  padding: 5px 25px;
 }
 
 .sidebar-toc ul li a:hover {
@@ -246,18 +245,30 @@ div.sphinxsidebar .sidebar-toc a {
   color: #444;
 }
 
+.sidebar-toc ul li.toctree-l1 a {
+  padding: 5px 25px;
+}
+
+.sidebar-toc ul li.toctree-l2 a {
+  padding: 5px 50px;
+}
+
+.sidebar-toc ul li.toctree-l3 a {
+  padding: 5px 75px;
+}
+
 div.sphinxsidebar ul.want-points {
   padding-left: 20px;
   margin: 0;
 }
 
-div.sphinxsidebar ul ul {
+div.sphinxsidebar .sidebar-toc ul ul {
   margin: 0;
   padding: 0;
 }
 
-div.sphinxsidebar ul ul a {
-  padding-left: 45px;
+.sidebar-localtoc ul {
+    padding-left: 24px;
 }
 
 div.sphinxsidebar input {
@@ -571,6 +582,14 @@ p.topic-title {
   font-size: 1.1em;
   font-weight: bold;
   margin-top: 10px;
+}
+
+/* -- contents-------------------------------------------------------------- */
+
+div.topic.contents {
+    display: inline-block;
+    border-radius: 3px;
+    padding: 24px 36px 18px 36px;
 }
 
 /* -- admonitions ----------------------------------------------------------- */
