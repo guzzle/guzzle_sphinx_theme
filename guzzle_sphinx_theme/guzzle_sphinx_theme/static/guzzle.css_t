@@ -675,11 +675,6 @@ div.admonition tt.xref, div.admonition a tt {
   border-bottom: 1px solid #fafafa;
 }
 
-dd div.admonition {
-  margin-left: -60px;
-  padding-left: 60px;
-}
-
 div.admonition p.last {
   margin-bottom: 0;
 }
