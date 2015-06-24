@@ -62,8 +62,8 @@ class HTMLTranslator(SphinxHTMLTranslator):
         """
         self.context.append(self.compact_p)
         self.compact_p = True
-        classes = ' '.join(['table', 'table-bordered',
-            self.settings.table_style]).strip()
+        classes = 'table table-bordered ' + self.settings.table_style
+        classes = classes.strip()
         self.body.append(
             self.starttag(node, 'table', CLASS=classes))
 
