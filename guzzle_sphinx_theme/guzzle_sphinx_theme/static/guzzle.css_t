@@ -48,6 +48,10 @@ dt:hover > a.headerlink {
   visibility: visible;
 }
 
+h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
+  color: #5C7C98;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: black;
   font-weight: normal;
@@ -590,6 +594,10 @@ div.topic.contents {
     display: inline-block;
     border-radius: 3px;
     padding: 24px 36px 18px 36px;
+}
+
+div.topic.contents > ul {
+    padding-left: 20px;
 }
 
 /* -- admonitions ----------------------------------------------------------- */
