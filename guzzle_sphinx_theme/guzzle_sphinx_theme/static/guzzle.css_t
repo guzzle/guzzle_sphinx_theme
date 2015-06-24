@@ -313,9 +313,7 @@ div.sphinxsidebar input {
 }
 
 .text-logo:hover {
-  background-color: #f4f8fa;
-  text-decoration: none;
-  color: #428bca;
+  color: #fff;
 }
 
 /* Left-nav search box
