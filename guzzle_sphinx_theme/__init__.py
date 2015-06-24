@@ -73,3 +73,65 @@ class HTMLTranslator(SphinxHTMLTranslator):
         """
         self.compact_p = self.context.pop()
         self.body.append('</table>\n')
+
+    def visit_field(self, node):
+        pass
+
+    def depart_field(self, node):
+        pass
+
+    def visit_field_name(self, node):
+        atts = {}
+        if self.in_docinfo:
+            atts['class'] = 'docinfo-name'
+        else:
+            atts['class'] = 'field-name'
+        self.context.append('')
+        self.body.append(self.starttag(node, 'dt', '', **atts))
+
+    def depart_field_name(self, node):
+        self.body.append('</dt>')
+        self.body.append(self.context.pop())
+
+    def visit_field_body(self, node):
+        self.body.append(self.starttag(node, 'dd', '', CLASS='field-body'))
+        self.set_class_on_child(node, 'first', 0)
+        field = node.parent
+        if (self.compact_field_list or
+            isinstance(field.parent, nodes.docinfo) or
+            field.parent.index(field) == len(field.parent) - 1):
+            # If we are in a compact list, the docinfo, or if this is
+            # the last field of the field list, do not add vertical
+            # space after last element.
+            self.set_class_on_child(node, 'last', -1)
+
+    def depart_field_body(self, node):
+        self.body.append('</dd>\n')
+
+    def visit_field_list(self, node):
+        self.context.append((self.compact_field_list, self.compact_p))
+        self.compact_p = None
+        if 'compact' in node['classes']:
+            self.compact_field_list = True
+        elif (self.settings.compact_field_lists
+              and 'open' not in node['classes']):
+            self.compact_field_list = True
+        if self.compact_field_list:
+            for field in node:
+                field_body = field[-1]
+                assert isinstance(field_body, nodes.field_body)
+                children = [n for n in field_body
+                            if not isinstance(n, nodes.Invisible)]
+                if not (len(children) == 0 or
+                        len(children) == 1 and
+                        isinstance(children[0],
+                                   (nodes.paragraph, nodes.line_block))):
+                    self.compact_field_list = False
+                    break
+        self.body.append(self.starttag(node, 'dl', frame='void',
+                                       rules='none',
+                                       CLASS='docutils field-list'))
+
+    def depart_field_list(self, node):
+        self.body.append('</dl>\n')
+        self.compact_field_list, self.compact_p = self.context.pop()

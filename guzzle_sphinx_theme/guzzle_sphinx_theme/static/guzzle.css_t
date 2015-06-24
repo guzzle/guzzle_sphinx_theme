@@ -70,7 +70,6 @@ h1 {
 }
 
 h2 {
-  margin-top: 40px;
   font-size: 34px;
   padding: .2em 0;
   border-bottom: 1px solid #ddd;
@@ -105,7 +104,6 @@ div.related {
 }
 
 p {
-  margin: 1.2em 0;
   padding: 0;
   font-family: inherit;
   font-size: inherit;
@@ -156,7 +154,7 @@ a.internal em {
 }
 
 dl dd {
-  margin: 3px 0 10px 40px;
+  margin: 3px 0 10px 30px;
 }
 
 .breadcrumb {
