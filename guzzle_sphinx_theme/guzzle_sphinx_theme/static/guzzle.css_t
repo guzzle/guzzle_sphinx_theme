@@ -61,14 +61,12 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 42px;
+  font-size: 38px;
   padding: 10px 10px 10px 50px;
   margin: 20px 0 35px -70px;
   background-color: aliceblue;
-  box-shadow: 0px 2px 2px #efefef;
   width: calc(100% + 130px);
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #D8E4EF;
 }
 
 h2 {
@@ -211,7 +209,11 @@ div.sphinxsidebar p {
   margin: 10px 0;
 }
 
-div.sphinxsidebar .sidevar-toc ul {
+.sidebar-toc {
+  font-size: 15px;
+}
+
+div.sphinxsidebar .sidebar-toc ul {
   margin: 0 0 4px 0;
   list-style-type: none;
   color: #000;
@@ -298,20 +300,22 @@ div.sphinxsidebar input {
 }
 
 .text-logo {
-  font-size: 30px;
+  font-size: 18px;
   text-align: center;
   display: block;
-  padding: 10px;
-  color: #428bca;
+  padding: 8px;
+  color: #fff;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0 0 20px 0;
+  font-weight: bold;
+  background-color: #337ab7;
+  border-bottom: 1px solid #fff;
 }
 
 .text-logo:hover {
   background-color: #f4f8fa;
   text-decoration: none;
   color: #428bca;
-  border-bottom: none;
 }
 
 /* Left-nav search box
@@ -572,7 +576,7 @@ img.align-center, .figure.align-center, object.align-center {
 /* -- topics ---------------------------------------------------------------- */
 
 div.topic {
-  border: 1px solid #ccc;
+  border: 1px solid #e8e8e8;
   padding: 7px 7px 0 7px;
   margin: 10px 0 10px 0;
   background-color: #f8f8f8;
@@ -598,8 +602,9 @@ div.topic.contents {
   margin: 20px 0;
   padding: 20px;
   background-color: #fff;
-  border-width: 1px 1px 1px 12px;
-  border-style: solid;
+  border: 1px solid #eee;
+  border-left-width: 6px;
+  border-radius: 3px;
 }
 
 .admonition dt {
@@ -621,7 +626,7 @@ div.topic.contents {
 
 .admonition.danger,
 .admonition.error {
-  border-color: #d9534f;
+  border-left-color: #d9534f;
 }
 
 .admonition.danger .admonition-title,
@@ -633,7 +638,7 @@ div.topic.contents {
 .admonition.warning,
 .admonition.attention,
 .admonition.caution {
-  border-color: #f0ad4e;
+  border-left-color: #f0ad4e;
 }
 
 .admonition.important .admonition-title,
@@ -645,7 +650,7 @@ div.topic.contents {
 
 .admonition.note,
 .admonition.hint {
-  border-color: #31708f;
+  border-left-color: #31708f;
 }
 
 .admonition.note .admonition-title,
@@ -654,7 +659,7 @@ div.topic.contents {
 }
 
 .admonition.tip {
-  border-color: #3c763d;
+  border-left-color: #3c763d;
 }
 
 .admonition.tip .admonition-title {
@@ -901,7 +906,7 @@ span.eqno {
   #right-column {
     margin-left: 0;
     margin-top: 0;
-    padding: 8px 20px;
+    padding: 50px 20px 8px 20px;
     width: 100%;
     float: none;
   }

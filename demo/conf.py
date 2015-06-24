@@ -4,7 +4,7 @@ from sphinx.highlighting import lexers
 from pygments.lexers.web import PhpLexer
 
 
-project = u'Theme Demo'
+project = u'Demo'
 copyright = u'2015, My Name'
 master_doc = 'index'
 templates_path = ['_templates']
@@ -17,7 +17,8 @@ exclude_patterns = ['_build']
 
 html_show_sourcelink = False
 html_sidebars = {
-    '**': ['globaltoc.html',
+    '**': ['logo-text.html',
+           'globaltoc.html',
            'localtoc.html',
            'searchbox.html']
 }
