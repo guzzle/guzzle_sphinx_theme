@@ -244,8 +244,7 @@ div.sphinxsidebar .sidebar-toc a {
 
 .sidebar-toc ul li.current > a,
 .sidebar-toc ul li.current > a:hover {
-  background-color: #eee;
-  border-bottom: 1px solid #ccc;
+  background-color: #e6e6e6;
   color: #444;
 }
 
@@ -287,18 +286,29 @@ div.sphinxsidebar input {
 
 .sidebar-block {
   padding: 0;
-  margin: 14px 0 40px 0;
+  margin: 14px 0 30px 0;
 }
 
 .sidebar-block h2 {
-  border-bottom: 1px solid #ccc;
-  margin: 0 0 18px 0;
-  font-size: 24px;
+  border-bottom: none;
+  margin: 0 0 17px 0;
+  font-size: 14px;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   padding: 0 0 6px 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #606060;
 }
 
 .sidebar-block .bd {
   font-size: 16px;
+}
+
+.sphinxsidebar > .sidebar-block:not(:last-child):after {
+    content: '';
+    display:block;
+    border-top: 1px solid #ccc;
+    margin: 24px 22px 0 22px;
 }
 
 .text-logo {
