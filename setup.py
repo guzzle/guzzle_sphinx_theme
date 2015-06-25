@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='guzzle_sphinx_theme',
-    version='0.7.8',
+    version='0.7.9',
     description='Sphinx theme used by Guzzle.',
     long_description=open('README.rst').read(),
     author='Michael Dowling',
