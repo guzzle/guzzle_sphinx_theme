@@ -66,10 +66,10 @@ h1, h2, h3 {
 
 h1 {
   font-size: 38px;
-  padding: 10px 10px 10px 50px;
-  margin: 20px 0 35px -70px;
+  padding: 10px 10px 10px 45px;
+  margin: 20px 0 35px -45px;
   background-color: aliceblue;
-  width: calc(100% + 130px);
+  width: calc(100% + 90px);
   border-bottom: 1px solid #D8E4EF;
 }
 
@@ -389,7 +389,7 @@ table.two-column {
 .footer-relations {
   display: relative;
   border-top: 1px solid #ccc;
-  padding: 12px 60px;
+  padding: 12px 45px;
   margin-top: 30px;
   font-size: 24px;
 }
@@ -518,7 +518,7 @@ div.genindex-jumpbox {
 /* -- general body styles --------------------------------------------------- */
 
 .body {
-  padding: 0 60px;
+  padding: 0 45px;
 }
 
 div.body p.caption {
