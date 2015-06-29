@@ -9,16 +9,13 @@ body {
   font-size: 16px;
   color: #333;
   line-height: 1.5;
-  -webkit-font-feature-settings: "kern", "liga";
-  -moz-font-feature-settings: "kern", "liga";
-  font-feature-settings: "kern", "liga";
 }
 
 #left-column {
   float: left;
   position: fixed;
   height: 100%;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid #e0e0e0;
   width: 300px;
   overflow: auto;
   background: #fafafa;
@@ -112,9 +109,6 @@ p {
   font-family: inherit;
   font-size: inherit;
   color: #333;
-  -webkit-font-feature-settings: "kern", "liga";
-  -moz-font-feature-settings: "kern", "liga";
-  font-feature-settings: "kern", "liga";
 }
 
 code, pre, tt {
@@ -159,6 +153,10 @@ a.internal em {
 
 dl dd {
   margin: 3px 0 10px 30px;
+}
+
+dl.method {
+  border-bottom: 1px solid #ccc;
 }
 
 .breadcrumb {
