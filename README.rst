@@ -24,8 +24,6 @@ Add the following to your conf.py:
 
     import guzzle_sphinx_theme
 
-    # Adds an HTML table visitor to apply Bootstrap table classes
-    html_translator_class = 'guzzle_sphinx_theme.HTMLTranslator'
     html_theme_path = guzzle_sphinx_theme.html_theme_path()
     html_theme = 'guzzle_sphinx_theme'
 
@@ -45,8 +43,6 @@ example shows:
 
     import guzzle_sphinx_theme
 
-    # Adds an HTML table visitor to apply Bootstrap table classes
-    html_translator_class = 'guzzle_sphinx_theme.HTMLTranslator'
     html_theme_path = guzzle_sphinx_theme.html_theme_path()
     html_theme = 'guzzle_sphinx_theme'
 

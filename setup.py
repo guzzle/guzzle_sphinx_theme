@@ -10,7 +10,7 @@ setup(
     url='https://github.com/guzzle/guzzle_sphinx_theme',
     packages=['guzzle_sphinx_theme'],
     include_package_data=True,
-    install_requires=['Sphinx>=1.2b1'],
+    install_requires=['Sphinx>1.3'],
     classifiers=(
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
