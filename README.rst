@@ -104,7 +104,7 @@ Finally, edit your override file "source/_templates/layout.html":
     {# Import the theme's layout. #}
     {% extends "!layout.html" %}
 
-    {%- block extra_head %}
+    {%- block extrahead %}
     {# Add custom things to the head HTML tag #}
     {# Call the parent block #}
     {{ super() }}
