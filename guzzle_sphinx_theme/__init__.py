@@ -136,3 +136,6 @@ class HTMLTranslator(SphinxHTMLTranslator):
     def depart_field_list(self, node):
         self.body.append('</dl>\n')
         self.compact_field_list, self.compact_p = self.context.pop()
+
+    def visit_container(self, node):
+        self.body.append(self.starttag(node, 'div', CLASS='docutils'))
