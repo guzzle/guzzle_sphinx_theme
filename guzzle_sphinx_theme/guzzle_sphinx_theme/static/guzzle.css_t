@@ -999,6 +999,8 @@ span.eqno {
 .mh { color: #009999 } /* Literal.Number.Hex */
 .mi { color: #009999 } /* Literal.Number.Integer */
 .mo { color: #009999 } /* Literal.Number.Oct */
+.mn { color: #009999 } /* Literal.Number.Number */
+.mrow { color: #009999 } /* Literal.Number.Row */
 .sb { color: #d01040 } /* Literal.String.Backtick */
 .sc { color: #d01040 } /* Literal.String.Char */
 .sd { color: #d01040 } /* Literal.String.Doc */
