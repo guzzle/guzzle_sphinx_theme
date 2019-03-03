@@ -69,13 +69,22 @@ example shows:
 
         # Specify a base_url used to generate sitemap.xml links. If not
         # specified, then no sitemap will be built.
-        "base_url": ""
+        "base_url": "",
 
         # Allow a separate homepage from the master_doc
         "homepage": "index",
 
         # Allow the project link to be overriden to a custom URL.
         "projectlink": "http://myproject.url",
+
+        # Visible levels of the global TOC; -1 means unlimited
+        "globaltoc_depth": 3,
+
+        # If False, expand all TOC entries
+        "globaltoc_collapse": False,
+
+        # If True, show hidden TOC entries
+        "globaltoc_includehidden": False,
     }
 
 Customizing the layout
