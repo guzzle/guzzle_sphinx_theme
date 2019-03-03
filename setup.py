@@ -11,6 +11,7 @@ setup(
     packages=['guzzle_sphinx_theme'],
     include_package_data=True,
     install_requires=['Sphinx>1.3'],
+    license="MIT",
     classifiers=(
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
